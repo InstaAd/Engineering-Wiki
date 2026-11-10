@@ -1,4 +1,4 @@
-Feature: Sign-up and Login (Google SSO and Email/Password)
+
 Field	Details
 Feature ID	FEAT-002
 Owner (Product)	[Name]
@@ -7,6 +7,7 @@ Designer	[Name]
 Status	Draft
 Related feature	FEAT-001 Sign-up and Account Onboarding (starts after a successful sign-up or first login)
 Last updated	[Date]
+
 1. Summary
 Users can create an account and log in using either Google sign-in (SSO) or an email and password. After sign-up, the account becomes active once the phone number (and, for email/password sign-ups, the email) is verified with a 6-digit OTP; active users continue to onboarding (FEAT-001). Returning users go straight to the product.
 2. Problem and Goals

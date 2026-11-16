@@ -12,7 +12,7 @@ Tech lead | [Name]
 Status | Draft
 Related features | FEAT-002 Sign-up and Login ([IA-4](https://insta-ad.atlassian.net/browse/IA-4)), FEAT-001 Sign-up and Account Onboarding, [IA-108](https://insta-ad.atlassian.net/browse/IA-108) Organisations, Teams and Workspaces
 Related pages | [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Host-Flow), [Customer flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Customer-Flow)
-Last updated | 2026-11-13
+Last updated | 2026-11-16
 
 ## 1. Summary
 
@@ -22,6 +22,20 @@ The home page is where a user lands after the account is approved. What the user
 * An **Organisation** user sees a page that depends on the access type: **Admin** or **Member**.
   * An Admin manages teams, access rights, the account type of the organisation and the workspaces.
   * A Member sees the home page set up by the admin and the workspaces the Member belongs to.
+
+### Current application mapping
+
+After account mandatory details are submitted and the account is verified/activated (FEAT-002, Jira [IA-4](https://insta-ad.atlassian.net/browse/IA-4)), the signed-in app presents a dashboard with active-device, running-ad, subscription and ad-play summaries; quick actions for campaigns, screen registration/management and rental-location listings; and profile-status indicators. This is the current app surface mapped to this home-page feature, not a replacement for the account-type and Admin/Member home-page requirements below.
+
+| Application area | Existing wiki/Jira mapping | Current-app observation and scope note |
+|---|---|---|
+| Signed-in dashboard (`/dashboard`) | This User Home Page; Jira feature [IA-85](https://insta-ad.atlassian.net/browse/IA-85), Personal home page [IA-86](https://insta-ad.atlassian.net/browse/IA-86), Organisation Admin [IA-90](https://insta-ad.atlassian.net/browse/IA-90), Organisation Member [IA-94](https://insta-ad.atlassian.net/browse/IA-94) | Shows account summaries, quick actions and profile status. Confirm whether the current dashboard layout and metrics fall within the existing home-page story scope. |
+| Organizations and workspaces (`/my-organizations`) | [Organizations and Workspaces](./Organizations-and-Workspaces.md); this page, section 5; Organisations, Teams and Workspaces [IA-108](https://insta-ad.atlassian.net/browse/IA-108), Workspaces story [IA-113](https://insta-ad.atlassian.net/browse/IA-113) | Lists personal/business workspaces, member counts and roles; lets the user set an active workspace and offers workspace creation. Member invitations and role-management behavior were not verified. |
+| Campaigns and media (`/campaigns`, `/ads`) | [Advertiser Campaigns and Media](./Advertiser-Campaigns-and-Media.md); new feature [IA-517](https://insta-ad.atlassian.net/browse/IA-517), under Customer Experience [IA-139](https://insta-ad.atlassian.net/browse/IA-139) | Captures campaign discovery/creation and media library UI. Checkout, upload moderation, and publication were not verified. |
+| Screen management (`/devices`, `/devices/register`) | [Host Screen Management](./Host-Screen-Management.md); new feature [IA-518](https://insta-ad.atlassian.net/browse/IA-518), related resource work [IA-189](https://insta-ad.atlassian.net/browse/IA-189), [IA-190](https://insta-ad.atlassian.net/browse/IA-190), [IA-324](https://insta-ad.atlassian.net/browse/IA-324) | Maps screen ownership/registration to Host type 1. Registration, groups, pairing, and playback are not all verified. |
+| Rental-location listings (`/rent-location/listings`) | [Host Rental Location Listings](./Host-Rental-Location-Listings.md); new feature [IA-519](https://insta-ad.atlassian.net/browse/IA-519); distinct future Host type 2 issue [IA-194](https://insta-ad.atlassian.net/browse/IA-194) | Current app maps advertiser-rentable location listings to Host type 2; retain the different future Host type 2 meaning until Product confirms alignment. |
+| Billing and subscriptions (`/subscriptions`) | [Billing and Subscriptions](./Billing-and-Subscriptions.md); [IA-262](https://insta-ad.atlassian.net/browse/IA-262), [IA-263](https://insta-ad.atlassian.net/browse/IA-263), [IA-275](https://insta-ad.atlassian.net/browse/IA-275), [IA-287](https://insta-ad.atlassian.net/browse/IA-287), [IA-292](https://insta-ad.atlassian.net/browse/IA-292) | The app displays advertiser and screen-owner plan offers. Plan selection and payment were not tested. |
+| Account settings (`/settings`) | [Account Settings](./Account-Settings.md); profile/preferences [IA-466](https://insta-ad.atlassian.net/browse/IA-466), notifications [IA-374](https://insta-ad.atlassian.net/browse/IA-374), billing [IA-215](https://insta-ad.atlassian.net/browse/IA-215)/[IA-292](https://insta-ad.atlassian.net/browse/IA-292), device controls [IA-518](https://insta-ad.atlassian.net/browse/IA-518) | The signed-in app exposes profile/security, notification and regional preferences, payment/invoice UI, and device-management controls. Changes were not saved or verified. |
 
 ## 2. Users and access types
 
@@ -204,6 +218,7 @@ Date | Version | Change | Author
 2026-11-12 | 0.6 | Added sample UI workflows for the Personal, Admin and Member home pages |
 2026-11-12 | 0.7 | Renamed the page to User Home Page |
 2026-11-13 | 0.8 | Set the Feature ID to the Jira feature IA-85 and added section 10 with the related Jira stories and tasks |
+2026-11-16 | 0.9 | Mapped the signed-in dashboard, organization/workspace, billing and settings surfaces to the existing home-page wiki and Jira references without replacing the planned account-type-specific home pages |
 
 ## 10. Jira Stories and Tasks
 

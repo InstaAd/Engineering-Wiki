@@ -15,7 +15,7 @@ Designer | [Name]
 Status | Draft
 Related feature | FEAT-001 Sign-up and Account Onboarding   (starts after a successful sign-up or first login)
 Related Jira features | [IA-85](https://insta-ad.atlassian.net/browse/IA-85) User Home Page, [IA-108](https://insta-ad.atlassian.net/browse/IA-108) Organisations, Teams and Workspaces
-Last updated | 2026-11-13
+Last updated | 2026-11-16
 
 
 
@@ -70,6 +70,16 @@ Invited user | Received an invitation to an organisation   and signs up or logs 
 
 **Home page:** the [User Home Page](https://github.com/InstaAd/Engineering-Wiki/wiki/Feature-%E2%80%90-User-Home-Page) describes what each user sees after the account is approved: the Personal home page, and the Organisation home page for an Admin or a Member.
 
+**Current application mapping (observed 2026-11-16):** users first complete the account-level mandatory fields and account verification/activation under this feature ([IA-4](https://insta-ad.atlassian.net/browse/IA-4)); after activation, the signed-in app exposes the role surfaces below. Host-specific mandatory details and verification are an additional Host gate under [IA-449](https://insta-ad.atlassian.net/browse/IA-449), with Host inventory remaining inactive until approved ([IA-478](https://insta-ad.atlassian.net/browse/IA-478)).
+
+| Current application surface | Role mapping | Existing wiki/Jira mapping |
+|---|---|---|
+| My Screens and Register Screen (`/devices`, `/devices/register`) | Host / screen owner, Host type 1 | [Host flow](./User-Account-Host-Flow.md); Host Pathway and Host Types [IA-177](https://insta-ad.atlassian.net/browse/IA-177), choose Host type [IA-178](https://insta-ad.atlassian.net/browse/IA-178), Host verification [IA-449](https://insta-ad.atlassian.net/browse/IA-449) |
+| Rent Location and My Listings (`/rent-location/listings`) | Host / rental-location provider, Host type 2 | [Host flow](./User-Account-Host-Flow.md); related Host issues [IA-177](https://insta-ad.atlassian.net/browse/IA-177), [IA-178](https://insta-ad.atlassian.net/browse/IA-178), ownership details [IA-458](https://insta-ad.atlassian.net/browse/IA-458) |
+| Campaigns and Media (`/campaigns`, `/campaigns/create`, `/ads`) | Customer / advertiser / campaign publisher | [Customer flow](./User-Account-Customer-Flow.md); Customer Pathway and Onboarding [IA-140](https://insta-ad.atlassian.net/browse/IA-140), Customer page story [IA-141](https://insta-ad.atlassian.net/browse/IA-141) |
+| Signed-in dashboard and organizations/workspaces | Activated user; routes to the user's available role surfaces | [User Home Page](./User-Home-Page.md); home page [IA-85](https://insta-ad.atlassian.net/browse/IA-85), organizations/workspaces [IA-108](https://insta-ad.atlassian.net/browse/IA-108) |
+
+This table records the current app mapping and does not replace the future requirements in this page or the linked role-flow pages. In particular, the planned Host type 2 description is rental space for an InstaAd resource, while the current app's Rent Location workflow describes a location for advertisers to rent; retain both and confirm their product/Jira alignment. Related Jira IDs above may not cover every detailed app workflow; the role pages call out where a dedicated existing issue was not identified.
 
 **Decided:**
 •	One Host role with two types. **Host type 1** owns the resource, lists it in our application and controls it. **Host type 2** provides rental space to assemble our resource and is paid for the space; this Host has no control over the resource, and we have full control. A Host can be in both types. This choice is made after sign-up, in the settings or on the resources page when the Host opens it after login. The choice is required before a Host can create a resource or list their property.
@@ -605,6 +615,7 @@ Date | Version | Change | Author
 2026-11-12 | 0.8 | Added sample UI workflows for sign-up and for verifying and activating the account |
 2026-11-12 | 0.9 | Updated the link to the renamed User Home Page |
 2026-11-13 | 1.0 | Set the Feature ID to the Jira feature IA-4 and added section 18 with the related Jira stories and tasks |
+2026-11-16 | 1.1 | Mapped the current signed-in app surfaces to the Host type 1, Host type 2, Customer/campaign publisher and User Home Page wiki/Jira references while preserving the existing future requirements |
 
 
 
@@ -660,4 +671,3 @@ Jira | Feature | Wiki page
 [IA-140](https://insta-ad.atlassian.net/browse/IA-140) | Customer Pathway and Onboarding | [Customer flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Customer-Flow)
 [IA-177](https://insta-ad.atlassian.net/browse/IA-177) | Host Pathway and Host Types | [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Host-Flow)
 [IA-449](https://insta-ad.atlassian.net/browse/IA-449) | Host Onboarding and Verification (mandatory Host details, verification, activation) | [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Host-Flow) (sections 4 to 11)
-

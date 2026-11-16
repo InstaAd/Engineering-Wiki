@@ -7,10 +7,10 @@ Field | Details
 Parent feature | FEAT-002 Sign-up and Login ([IA-4](https://insta-ad.atlassian.net/browse/IA-4))
 Jira feature | [IA-449](https://insta-ad.atlassian.net/browse/IA-449) Host Onboarding and Verification (mandatory Host details, verification, activation) and [IA-177](https://insta-ad.atlassian.net/browse/IA-177) Host Pathway and Host Types, both in workstream [IA-176](https://insta-ad.atlassian.net/browse/IA-176) Host Experience. See section 16 for all stories and tasks
 Related feature | FEAT-001 Sign-up and Account Onboarding
-User type | Host (resource owner): Host type 1 and Host type 2
+User type | Host: Host type 1 (screen owner) and Host type 2 (current app rental-location listing; future scope still requires confirmation)
 Other user type | [Customer flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Customer-Flow)
 Status | Draft
-Last updated | 2026-11-13
+Last updated | 2026-11-16
 
 ## 1. Summary
 
@@ -19,6 +19,10 @@ There are two main types of users, and each has its own page: the Customer and t
 Because the Host earns money, the Host must give a set of **mandatory details** and pass **verification** before the Host role is active (section 4). **Until the Host is verified and active, all of the Host's resources stay inactive**: hidden from Customers and not bookable. This is the same activation idea as for the account itself.
 
 The role is not chosen at sign-up: the user lands on the Host page after the account is active and fills in the Host details there.
+
+### Account activation and current application access
+
+The user first completes the account-level mandatory fields and account verification/activation in [Sign-up and Login](./Sign-up-and-Login.md), Jira feature [IA-4](https://insta-ad.atlassian.net/browse/IA-4). The user then enters the Host pathway and completes the Host-specific mandatory details and verification described in this page, including [IA-449](https://insta-ad.atlassian.net/browse/IA-449) and [IA-450](https://insta-ad.atlassian.net/browse/IA-450). Host inventory must not become active before Host approval ([IA-478](https://insta-ad.atlassian.net/browse/IA-478)). The signed-in app screens mapped below are the current product surfaces after sign-in; their visibility does not waive the account or Host activation requirements, and not every end-to-end workflow was verified.
 
 ## 2. Who is a Host
 
@@ -32,6 +36,22 @@ Type 2 | Provides rental space to assemble our resource | None. We have full con
 * **Both Host types give the same information and pass the same verification.** The difference is how the resource is maintained, not what we collect.
 * Host / Customer applies to the whole organisation. An organisation always has an organisation admin, who is set when the organisation is created.
 * A Host can also be a Customer, and the other way round (see section 12).
+
+### Current application mapping
+
+This table maps the roles and Host types to the signed-in application's existing UI. These are mappings of current surfaces, not replacements for the Host requirements and future workflows defined in this page.
+
+| Application feature | Host mapping | Existing wiki/Jira references | Current-app observation and scope note |
+|---|---|---|---|
+| My Screens and Register Screen (`/devices`, `/devices/register`) | Host; screen listing is Host type 1 | [Host Screen Management](./Host-Screen-Management.md); new feature [IA-518](https://insta-ad.atlassian.net/browse/IA-518); related listing/resource issues [IA-189](https://insta-ad.atlassian.net/browse/IA-189), [IA-190](https://insta-ad.atlassian.net/browse/IA-190), [IA-324](https://insta-ad.atlassian.net/browse/IA-324); Host Pathway and Host Types [IA-177](https://insta-ad.atlassian.net/browse/IA-177), choose Host type [IA-178](https://insta-ad.atlassian.net/browse/IA-178), Host details [IA-182](https://insta-ad.atlassian.net/browse/IA-182), Host verification [IA-449](https://insta-ad.atlassian.net/browse/IA-449) and ownership details [IA-458](https://insta-ad.atlassian.net/browse/IA-458) | The UI exposes screen inventory and registration. IA-518 covers the distinct device/group/player workflow; the existing Host approval and inactive-inventory requirements remain. |
+| Rent Location and My Listings (`/rent-location/listings`) | Host; rental-location listing is Host type 2 in current app mapping | [Host Rental Location Listings](./Host-Rental-Location-Listings.md); new feature [IA-519](https://insta-ad.atlassian.net/browse/IA-519); existing future Host type 2 issues [IA-189](https://insta-ad.atlassian.net/browse/IA-189), [IA-194](https://insta-ad.atlassian.net/browse/IA-194), and [IA-255](https://insta-ad.atlassian.net/browse/IA-255); [IA-177](https://insta-ad.atlassian.net/browse/IA-177), [IA-178](https://insta-ad.atlassian.net/browse/IA-178), ownership details [IA-458](https://insta-ad.atlassian.net/browse/IA-458) | IA-519 captures the current app's advertiser-rentable location listing. The existing future Host type 2 definition describes space for an InstaAd resource; keep both and confirm product alignment. |
+| Host identity, mandatory details and verification | Host type 1 and Host type 2 | Host Onboarding and Verification [IA-449](https://insta-ad.atlassian.net/browse/IA-449); checklist [IA-450](https://insta-ad.atlassian.net/browse/IA-450), identity [IA-454](https://insta-ad.atlassian.net/browse/IA-454), ownership [IA-458](https://insta-ad.atlassian.net/browse/IA-458), review [IA-470](https://insta-ad.atlassian.net/browse/IA-470), inactive inventory [IA-478](https://insta-ad.atlassian.net/browse/IA-478) | Complete account activation first, then Host verification. These requirements remain future/product requirements even where the signed-in app currently exposes screens or listings. |
+
+**Observed screen-registration fields:** screen name/type, location name, orientation, indoor/outdoor environment, size, resolution and estimated daily footfall; supported aspect ratios, file types and maximum video duration; map/location search and address fields; location tags; up to five screen photos; and optional screen-group assignment. The UI offers screen inventory in Cards/Map/Split views, search and filters. Registration, pairing, playback and screen-group operations were not completed end to end.
+
+**Observed rental-location listing fields:** title, description, location type, address, city, district, postal code and country; available width/height, electricity availability, rent amount and period; map search/selection; and a draft action. Listing submission, review, publication, booking and payment were not verified.
+
+The following diagram records the existing future Host model; it is not intended to represent every currently deployed app workflow.
 
 ```mermaid
 flowchart TB
@@ -103,7 +123,7 @@ Field | Applies to | Notes
 Legal business name and entity type: LLC, Corporation, Sole proprietorship | Hosts listing as an entity |
 Business registration number and official registered address | Hosts listing as an entity |
 Beneficial ownership: details of every individual owning more than 25% | Hosts listing as an entity | Anti-Money Laundering (AML) compliance
-Proof of resource ownership or right to use and authorization | Every Host [requirement to be confirmed] | Type 1: proof that the Host owns or is authorized to list the resource. Host providing rental space: proof of ownership or the right to rent/sublet it. Tenant-operated shop screen, if approved: lease or rental agreement showing the Host/business may use the premises, plus landlord consent if the agreement does not permit installing the screen. A tenant's lease is not proof that they own the building (see section 7).
+Proof of resource ownership or right to use and authorization | Every Host [requirement to be confirmed] | For a Type 1 screen listing, evidence must show screen ownership or authority to operate/list the screen. For a Type 2 rental-location listing, evidence must show premises ownership or a right to offer the location. A tenant's lease may evidence premises use but not building ownership; landlord consent for installation or advertising may also be required. If the Host lists both a screen and a location, evidence is needed for each (see section 7).
 
 ### C. Financial and payout information
 
@@ -225,7 +245,7 @@ flowchart TD
     P{What is listed?}
     P -- "Host type 1: resource" --> P1["Proof of ownership:<br/>vehicle registration, deed, invoice"]
     P -- "Host type 2: rental space" --> P2["Property deed, lease agreement<br/>or sub-leasing authorisation letter"]
-    P -- "Tenant-operated shop screen<br/>(if eligible)" --> P3["Lease or rental agreement<br/>plus installation permission if required"]
+    P -- "Tenant-operated shop screen/location" --> P3["Screen authority for Type 1;<br/>lease and listing authority for Type 2"]
     P1 --> N[["Name on documents must match the Host or business name"]]
     P2 --> N
     P3 --> N
@@ -235,15 +255,14 @@ Scenario | Typical proof of ownership, right to use, or authorisation
 -- | --
 Type 1 (owns the resource) | Vehicle registration, property deed, purchase invoice, or other accepted proof
 Type 2 (provides rental space for an InstaAd resource) | Property deed, lease agreement, or an authorisation letter granting sub-leasing rights
-Tenant-operated shop screen (eligibility and classification to be confirmed) | Lease or rental agreement in the Host's or business's name showing the right to use the premises; landlord's written consent if the lease does not already allow the installation. This proves premises use/installation authorization, not building ownership.
+Current application Type 2 mapping (rental-location listing for advertisers) | Property deed if the Host owns the premises, or lease/rental agreement showing the right to offer the location; include any required landlord/subletting/advertising authorization. This is a current-app mapping and does not replace the future Type 2 requirements above.
+Tenant-operated shop screen and location | For the screen listing (Type 1), proof of screen ownership or authority to operate/list it. For a rental-location listing (Type 2), lease/rental agreement showing the right to use and offer the premises. A tenant's lease does not establish building ownership; landlord consent may be needed for screen installation or advertising.
 
-### Scenario to confirm: tenant installing a screen in their shop
+### Tenant-operated shop: current application mapping
 
-A person or business rents a shop and wants to install a display screen there as part of its own business. The Host may own and operate the shop business without owning the building. In this case, the tenant's lease or rental agreement could show their right to use the premises, but it does not prove that they own the building. Building ownership proof would belong to the landlord/property owner.
+A person or business rents a shop and installs a display screen there as part of its own business. In the current application mapping, registering/listing that screen is Host type 1. If the tenant also creates a rental-location listing for advertisers, that listing is Host type 2; one Host may use both pathways.
 
-This scenario is not clearly covered by the current Host type definitions: Host type 2 currently means providing rental space for an InstaAd resource, while this tenant wants to install a screen as part of their own business. Confirm whether this is an eligible Host scenario and how it should be classified before treating it as allowed.
-
-If eligible, confirm what authorization is required to install and operate the screen—for example, whether the lease must permit the installation or separate written consent from the landlord is needed. The tenant should provide evidence of their right to use the premises and any required installation authorization; do not treat the tenant as the building owner solely because they own or operate the shop business.
+The existing future Host type 2 definition above describes rental space for an InstaAd resource, while the app's Rent Location workflow describes a location offered to advertisers. Keep both requirements in scope and confirm how the future Host type 2 definition aligns with the currently deployed listing. The tenant's lease or rental agreement can evidence their right to use the premises, but does not prove building ownership. Confirm whether separate landlord consent is required to install the screen and/or offer the location to advertisers.
 
 ## 8. Verification and review
 
@@ -452,6 +471,7 @@ Both types | A Host can be Host type 1, Host type 2, or both
 Same information | Both Host types give the same details and pass the same verification
 Resources inactive | A Host's resources stay inactive until the Host is verified and active
 Type before listing | A Host must choose the Host type before creating a resource or listing a property
+Current application mapping | Screen listing is Host type 1; rental-location listing is Host type 2 (see section 2)
 Proof of address | Dated less than 90 days ago
 Beneficial owners | Every individual owning more than 25% is listed (AML)
 Public data | Only the public profile (section 4 D) is shown to Customers
@@ -472,12 +492,15 @@ Organisations | Host / Customer applies to the whole organisation, which always 
 10. What is the expected review time shown to the Host?
 11. What happens to existing bookings if a Host is suspended?
 12. Which triggers and deadlines apply to re-verification (section 11)?
-13. Is a tenant who rents a shop and installs a display screen for their own business an eligible Host scenario, and if so, which Host type applies and what lease or landlord authorization is required?
+13. Does a tenant need separate landlord consent to install a screen and/or offer the shop as a rental location to advertisers, beyond permissions in the lease?
+14. How should the future Host type 2 requirement (rental space for an InstaAd resource) align with the app's current Rent Location listing for advertisers?
 
 ## 15. Change log
 
 Version | Date | Change
 -- | -- | --
+0.5 | 2026-11-16 | Added Jira features IA-518 and IA-519 for previously uncovered current-app screen management and advertiser-rentable listings; retained the existing future Host type 2 definition and activation requirements.
+0.4 | 2026-11-16 | Mapped current app screens to Host type 1, rental-location listings to Host type 2, and linked the mappings to existing Host Jira references without replacing future requirements.
 0.3 | 2026-11-16 | Added the tenant-operated shop and display screen scenario for confirmation, including the distinction between premises-use authorization and building ownership proof.
 0.2 | 2026-11-13 | Added the mandatory Host details, activation and status, resources inactive until active, verification and review, tax and payout rules, data model, sample UI and diagrams. Jira stories and tasks added
 0.1 | 2026-11-13 | First draft of the Host flow
@@ -507,3 +530,5 @@ Key | Type | Title | Covers
 [IA-507](https://insta-ad.atlassian.net/browse/IA-507) | Task | Audit log and role-based access for Host verification data | Section 8
 
 Earlier items on the Host page: [IA-177](https://insta-ad.atlassian.net/browse/IA-177) Host Pathway and Host Types with stories [IA-178](https://insta-ad.atlassian.net/browse/IA-178) Choose the Host type and [IA-182](https://insta-ad.atlassian.net/browse/IA-182) Land on the Host page and fill in host details, and task [IA-186](https://insta-ad.atlassian.net/browse/IA-186) Define the Host-specific fields (answered by section 4).
+
+The application-to-wiki/Jira mappings are listed in section 2. The current-app screen-management and advertiser-rentable location workflows are now captured in [IA-518](https://insta-ad.atlassian.net/browse/IA-518) and [IA-519](https://insta-ad.atlassian.net/browse/IA-519), respectively. Existing Host verification, resource listing, resource management, and future Host type 2 requirements remain separate and in force.

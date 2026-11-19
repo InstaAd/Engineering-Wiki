@@ -16,7 +16,7 @@ InstaAd primarily monetizes advertising campaigns that Customers create and publ
 1. **The Customer subscription** controls who can create campaigns and the plan's screen-count, slot-count, geographic coverage, or other usage limits. The Basic advertiser plan allows selection of up to 10 screens in one selected Ort; the Customer chooses how many available slots to book on each screen, and pays the locality-tiered monthly price per booked slot.
 2. **The screen/device** is owned and operated either by a screen-owning Host or by InstaAd. Its owner is not changed by where the screen is installed.
 3. **The ad slot** is a time position in the screen's playback loop. A screen-owning Host receives one no-charge slot per screen for their own content and may choose to release it for paid bookings instead. The Host receives the booking amount for successful bookings, less the agreed InstaAd booking royalty/charge under the booking-fee route.
-4. **The location agreement** applies when a Host provides space for an InstaAd-owned resource. InstaAd receives booking revenue from that resource and pays the Host the agreed fixed monthly rent, irrespective of how fully booked the screen is.
+4. **The location agreement** applies when a Host provides space for an InstaAd-owned resource. Under the standard rent agreement, InstaAd receives all booking revenue and pays the Host the accepted fixed monthly rent, irrespective of how fully booked the screen is. The space provider receives no free slot by default. Alternatively, the parties may agree to no rent in exchange for one or more Host content slots, or negotiate another explicit slot allocation; record the accepted terms and configure the inventory accordingly.
 
 Advertiser subscription fees, Host application subscription fees, campaign booking revenue, Host screen-owner revenue, any percentage booking fee, and Host type 2 fixed space rent are different ledger entries. For Host type 1, the Host chooses either the booking-fee route or the application-subscription route; do not charge both a Host application subscription and an InstaAd booking fee for the same Host plan. The product and finance implementation must show these separately.
 
@@ -26,7 +26,7 @@ Advertiser subscription fees, Host application subscription fees, campaign booki
 |---|---|---|---|---|
 | Host-owned screen (Host type 1) | Host | One 10-second slot per screen in the playback loop, under the proposed loop rule in section 3. Host may use it for their own content or make it bookable. | Depends on the Host's selected monetization route: percentage booking fee or fixed application subscription. | **Booking-fee route:** InstaAd receives an agreed X% from each successful slot booking; no booking fee is due when there is no successful booking. **Application-subscription route:** Host pays a recurring application-use fee regardless of bookings; no InstaAd booking fee is charged on bookings under this route. X% and the subscription amount are not yet set. |
 | InstaAd-owned screen | InstaAd | No Host-owner slot applies. | InstaAd receives booking revenue, subject to customer plan/booking terms and any agreed partner terms. | No Host screen-owner payout. |
-| Host provides space for an InstaAd-owned screen (future Host type 2 model) | InstaAd owns the device; Host owns/controls the premises | No Host device-owner slot applies unless a separate arrangement explicitly grants one. | InstaAd receives all advertising booking revenue for its screen/resource. | Fixed monthly rent per accepted app request/agreement. Rent is paid regardless of whether the screen is fully booked. |
+| Host provides space for an InstaAd-owned screen (future Host type 2 model) | InstaAd owns the device; Host owns/controls the premises | No free Host slot under the standard fixed-rent agreement. A slot or slots may be granted only under a separately accepted rent-free or negotiated compensation agreement. | InstaAd receives all advertising booking revenue for its screen/resource, except that any agreed Host content slots are reserved and unavailable for paid bookings. | Standard: fixed monthly rent under the accepted agreement, paid regardless of booking occupancy. Alternative: agreed Host slot allocation instead of cash rent; specify any hybrid terms explicitly. |
 
 **Keep the Host type 2 distinction explicit:** this rental-space arrangement differs from the current app's Rent Location form, which presents a location advertisers can rent. Product must confirm how those models align before the two are treated as the same offer. See [Host flow](./User-Account-Host-Flow.md) and [Host Rental Location Listings](./Host-Rental-Location-Listings.md).
 
@@ -36,14 +36,14 @@ The proposed playback unit is:
 
 - One slot is **10 seconds**.
 - One loop contains **6 slots**, so the base loop is **60 seconds**.
-- Each Host-owned screen reserves one slot in each loop for the Host's own content at no charge. The Host may instead release that slot to the paid booking pool. The choice should be configurable per screen and visible to both Host and booking/operations users.
+- Each Host-owned screen reserves one slot in each loop for the Host's own content at no charge. The Host may instead release that slot to the paid booking pool. This Host-owned-screen policy does not apply to a Host who only provides space for an InstaAd-owned screen; any such Host slot must be separately negotiated and recorded as part of the location agreement.
 - Play a **5–10 second InstaAd application promotion at the end of each slot**.
 
 ### Timing note to finalize before implementation
 
 The stated placement is at the **end of every slot**. Confirm whether the 5–10 second promotion is included within the 10-second slot or appended after the slot. If appended, a six-slot loop takes 90–120 seconds rather than 60 seconds. Confirm whether it runs on Host-owned as well as InstaAd-owned screens and whether it is additional to booked creative before publishing capacity or campaign delivery promises.
 
-The application must enforce that booked creative duration, the Host's optional slot, InstaAd promotion, and any operational buffer cannot overlap. Availability, playback proof and advertiser reporting must use the same finalized loop definition.
+The application must enforce that booked creative duration, any Host-owned or separately agreed Host content slot, InstaAd promotion, and operational buffers cannot overlap. Availability, playback proof and advertiser reporting must use the same finalized loop definition.
 
 ### Proposed slot workflow
 
@@ -55,12 +55,16 @@ flowchart TD
     D --> E{Host keeps own-content slot?}
     E -->|Yes| F[Play approved Host content in that slot]
     E -->|No| G[Release slot to paid bookings]
-    C -->|InstaAd-owned| H[All standard slots managed by InstaAd]
-    F --> I[Apply finalized InstaAd promotion timing]
-    G --> I
-    H --> I
-    I --> J[Check availability and prevent overlap]
-    J --> K[Play loop and record delivery]
+    C -->|InstaAd-owned| H[Apply accepted location agreement]
+    H --> I{Host compensation}
+    I -->|Fixed rent| J[InstaAd manages all slots; no Host slot]
+    I -->|Agreed slot exchange| K[Reserve agreed Host slot(s); remaining slots managed by InstaAd]
+    F --> L[Apply finalized InstaAd promotion timing]
+    G --> L
+    J --> L
+    K --> L
+    L --> M[Check availability and prevent overlap]
+    M --> N[Play loop and record delivery]
 ```
 
 The diagram describes the intended policy, not verified deployed scheduling behavior.
@@ -173,7 +177,7 @@ These figures were supplied as illustrative per-screen daily earnings for a scre
 | Ingolstadt | €70/day |
 | Berlin | €125/day |
 
-The booking volume, calculation basis, gross-versus-net meaning, fee route, taxes, energy/connectivity/maintenance costs, and whether these figures assume full occupancy remain to be defined. These daily screen-earnings examples are **not** the Customer's monthly subscription price. For example, the Basic Kleinostheim subscription is €60 per selected screen per month; the €60/day screen-earnings example is a separate, unverified estimate.
+The booking volume, calculation basis, gross-versus-net meaning, fee route, taxes, energy/connectivity/maintenance costs, and whether these figures assume full occupancy remain to be defined. These daily screen-earnings examples are **not** the Customer's monthly subscription price. For example, the Basic Kleinostheim rate is €60 per booked slot/device/month; the monthly device charge depends on the slot quantity (up to €360 for all six slots). The €60/day screen-earnings example is a separate, unverified estimate.
 
 For Host-owned screens, the expected calculation is:
 
@@ -192,14 +196,16 @@ Application-subscription route:
 
 The Host receives the successful booking amount and InstaAd takes the agreed percentage/charge on the booking-fee route; the booking-fee percentage X, application subscription amount, billing period, route changeover, calculation order, settlement period, minimum payout and refund/chargeback treatment are open until approved and documented. The application-subscription amount is to be informed by the first-100-user trial. Any payment-processing costs and taxes must be documented separately. A screen owner's one free slot is not a paid booking unless the Host releases it and a Customer actually books it.
 
-For an InstaAd-owned device placed in a Host's premises:
+For an InstaAd-owned device placed in a Host's premises, the standard arrangement is:
 
 ```text
-InstaAd booking revenue = paid advertising bookings for the InstaAd-owned resource
+InstaAd booking revenue = all paid advertising bookings for the InstaAd-owned resource
 Host rent expense       = fixed monthly rent in the accepted agreement
 ```
 
-The Host's rent is not reduced when campaign occupancy or bookings are low. Record the accepted rent amount, start/end date, payment due date, and any contractually accepted adjustments. Do not calculate Host rent as a share of advertising bookings.
+The Host's rent is not reduced when campaign occupancy or bookings are low. There is no free Host slot under this standard rent arrangement. Record the accepted rent amount, start/end date, payment due date, and any contractually accepted adjustments. Do not calculate Host rent as a share of advertising bookings.
+
+If the parties instead agree to no cash rent in exchange for one or more Host content slots, record that rent-free slot-exchange agreement explicitly. Reserve the agreed slot(s) for Host content and exclude them from paid availability; InstaAd receives all booking revenue only from the remaining bookable slots. Any hybrid rent-and-slot arrangement must also be explicitly negotiated and recorded rather than assumed.
 
 ## 6. Required product and admin behavior
 
@@ -221,16 +227,17 @@ The Host's rent is not reduced when campaign occupancy or bookings are low. Reco
 
 ### Host renting space to InstaAd
 
-- Review and accept a written monthly rent offer/request before placement.
-- See that rent is fixed by the accepted agreement and is independent of screen booking occupancy.
-- See due dates and payment status for rent; the Host does not receive advertising booking revenue for an InstaAd-owned device unless a separate signed agreement says otherwise.
+- Review and accept a written compensation offer/request before placement: fixed monthly rent, agreed Host slot(s) in lieu of rent, or explicitly negotiated hybrid terms.
+- Under fixed rent, see that payment is made monthly as agreed regardless of screen booking occupancy; there is no free Host slot.
+- Under a slot-exchange agreement, see the exact Host slot allocation and understand that those slots are reserved for Host content rather than paid bookings.
+- See due dates and payment status for rent when applicable; the Host does not receive booking revenue for an InstaAd-owned device unless a separate agreement explicitly says otherwise.
 
 ### InstaAd operations and finance
 
-- Store each screen's legal owner, operator, physical site, Host (if any), rent agreement (if any), activation status, slot policy, business categories, locality tier, approved formats and campaign availability.
+- Store each screen's legal owner, operator, physical site, Host (if any), accepted location-compensation agreement (fixed rent, slot exchange or explicitly negotiated hybrid), any Host-reserved slots, activation status, slot policy, business categories, locality tier, approved formats and campaign availability.
 - Keep Customer campaign access separate from ownership/admin controls, Host private data and payout information.
 - Prevent double-booking and record scheduled versus actually played impressions/slots.
-- Maintain auditable, separate ledgers for advertiser subscriptions, Host application subscriptions, campaign bookings, booking-fee deductions, Host screen payouts and fixed Host space rent.
+- Maintain auditable, separate ledgers for advertiser subscriptions, Host application subscriptions, campaign bookings, booking-fee deductions, Host screen payouts, fixed Host space rent and any recorded in-kind Host slot allocation.
 
 ## 7. Feature breakdown and Jira mapping
 
@@ -240,7 +247,7 @@ The Host's rent is not reduced when campaign occupancy or bookings are low. Reco
 | Slot inventory and Host choice | For Host-owned screens, configure the Host's one included slot per finalized loop; let the Host keep or release it. Released inventory becomes bookable only after availability and conflict checks. InstaAd-owned inventory has no Host-owner slot by default. | Screen Slot Inventory and Host Monetization [IA-520](https://insta-ad.atlassian.net/browse/IA-520), under workstream [IA-299](https://insta-ad.atlassian.net/browse/IA-299), linked to [IA-324](https://insta-ad.atlassian.net/browse/IA-324), [IA-312](https://insta-ad.atlassian.net/browse/IA-312) and [IA-250](https://insta-ad.atlassian.net/browse/IA-250) |
 | Campaign targeting and bookings | Match geography and verified business categories to eligible screens; show the matching inventory, exclusions, price and booking outcome before confirmation. | Advertiser campaigns [IA-517](https://insta-ad.atlassian.net/browse/IA-517); resource discovery [IA-300](https://insta-ad.atlassian.net/browse/IA-300); booking [IA-312](https://insta-ad.atlassian.net/browse/IA-312) |
 | Host monetization route and earnings | Let a Host choose either (a) an agreed X% fee from each successful slot booking, with no fixed application fee, or (b) a fixed application subscription regardless of booking count, with no InstaAd booking fee. Run a trial with the first 100 eligible users before setting the subscription price. Never charge both routes together. Show the selected route, booking outcomes, deductions/subscription invoices and payout statements. | Screen Slot Inventory and Host Monetization [IA-520](https://insta-ad.atlassian.net/browse/IA-520); pricing decision [IA-272](https://insta-ad.atlassian.net/browse/IA-272); plan catalog [IA-263](https://insta-ad.atlassian.net/browse/IA-263); Host payouts [IA-250](https://insta-ad.atlassian.net/browse/IA-250), receive payouts [IA-251](https://insta-ad.atlassian.net/browse/IA-251) |
-| Fixed rent for InstaAd-owned equipment | Record an accepted monthly rent agreement for Host-provided space and pay it independently of ad occupancy. Keep this separate from Host-owned screen booking payouts and the current advertiser-rentable listing flow. | Rental-space payments [IA-255](https://insta-ad.atlassian.net/browse/IA-255); Host type 2 resource tracking [IA-329](https://insta-ad.atlassian.net/browse/IA-329) |
+| Host compensation for InstaAd-owned equipment at Host premises | Record the accepted compensation terms: standard fixed monthly rent paid regardless of occupancy, or explicitly negotiated Host slot(s) in lieu of rent (including any hybrid terms). Under fixed rent, no Host slot is included; under a slot exchange, reserve agreed Host content slot(s) and exclude them from paid availability. InstaAd retains booking revenue from all remaining bookable slots. Keep this separate from Host-owned screen booking payouts and the current advertiser-rentable listing flow. | Host type 2 listing [IA-194](https://insta-ad.atlassian.net/browse/IA-194), rental-space payments [IA-255](https://insta-ad.atlassian.net/browse/IA-255); Host type 2 resource tracking [IA-329](https://insta-ad.atlassian.net/browse/IA-329) |
 | Customer plan, slot quantities, location tiers and first-100 rollout | Enforce the advertiser Basic limit of up to 10 selected screens in one Ort, with a selectable number of available slots per device (up to six). Charge the approved locality-tier price per booked slot/month. Kleinostheim low-tier example is €60 per slot/month: all six slots cost €360 per screen/month or €3,600/month for 10 screens. Keep premium geographic/category coverage and other city rates configurable until approved. Record Customer pilot, first-10 and first-100 cohort eligibility; do not infer waived application fees mean free campaign inventory. This is not a Host screen registration limit. | Pricing model [IA-272](https://insta-ad.atlassian.net/browse/IA-272); subscriptions [IA-262](https://insta-ad.atlassian.net/browse/IA-262); plans and pricing [IA-263](https://insta-ad.atlassian.net/browse/IA-263); plan limits [IA-288](https://insta-ad.atlassian.net/browse/IA-288); campaign targeting [IA-517](https://insta-ad.atlassian.net/browse/IA-517) |
 | Android playback client | Pair a screen securely, fetch approved schedules and creative, play the assigned loop, report health and playback evidence, and recover from network interruption. Requirements are described separately and are not confirmed deployed behavior. | Android Screen Player Application [IA-521](https://insta-ad.atlassian.net/browse/IA-521), under workstream [IA-299](https://insta-ad.atlassian.net/browse/IA-299), linked to [IA-324](https://insta-ad.atlassian.net/browse/IA-324), [IA-518](https://insta-ad.atlassian.net/browse/IA-518) and [IA-517](https://insta-ad.atlassian.net/browse/IA-517) |
 
@@ -255,7 +262,7 @@ The feature requirements and acceptance criteria are recorded in [IA-520](https:
 5. Which Basic-to-Premium plans include locality, regional, category-specific, Bavaria-wide and Germany-wide targeting? What are each plan's screen caps, eligible categories and prices?
 6. What is X%, the fee basis, and the success/refund/partial-play definition for the booking-fee route? What is the Host application-subscription price and billing period after the first-100-user trial? Confirm the two routes are mutually exclusive and define changeover timing, taxes, payment fees, refunds, payout timing and statements.
 7. Who pays electricity, connectivity, hardware, installation and maintenance costs for Host-owned screens versus InstaAd-owned screens?
-8. For Host-provided space, who approves the rent request, when does the monthly obligation begin/end, and what happens during outages, relocation or site closure?
+8. For Host-provided space, who approves the compensation request, how is the choice between fixed rent and an agreed slot exchange recorded, when do rent or slot-allocation terms begin/end, and what happens during outages, relocation or site closure?
 9. How does the current app's advertiser-rentable location listing align with the fixed-rent-for-InstaAd-resource Host type 2 model?
 10. Which Host earnings values are contractual commitments, forecast estimates, or examples only? Keep the €60/€70/€125 daily per-screen examples distinct from the monthly advertiser subscription charge (for example €60 per Kleinostheim screen/month under Basic).
 11. What exact Customer fees are waived for the first pilot, first 10 Customers and first 100 Customers, for how long, and are campaign booking charges explicitly excluded?

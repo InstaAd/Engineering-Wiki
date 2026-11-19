@@ -29,7 +29,7 @@ The user first completes the account-level mandatory fields and account verifica
 Host type | What the Host does | Control and maintenance of the resource | Gets paid for
 -- | -- | -- | --
 Type 1 | Owns the resource and lists it in our application | The Host controls and maintains the resource | Chooses either a booking-fee route (InstaAd receives X% per successful slot booking) or a recurring application subscription regardless of booking volume (no InstaAd booking fee). X% and the subscription price are TBD; trial the first 100 eligible users before setting the subscription price.
-Type 2 | Provides rental space to assemble our resource | InstaAd owns and controls the resource; Host's maintenance responsibilities remain subject to agreement | Fixed monthly rent in the accepted agreement, independent of screen booking utilization
+Type 2 | Provides rental space to assemble our resource | InstaAd owns and controls the resource; Host's maintenance responsibilities remain subject to agreement | Standard: fixed monthly rent under the accepted agreement, paid regardless of screen booking utilization; all advertising booking revenue goes to InstaAd, with no free Host slot. Alternative: one or more specifically agreed Host content slots in lieu of rent, or other negotiated terms recorded in the agreement.
 
 * A Host is a resource owner (see section 3 of the parent page).
 * A Host can be Host type 1, Host type 2, or both.
@@ -208,7 +208,7 @@ flowchart TD
 5. **Verification.** Automated checks run, then our backend team reviews (section 8). The Host sees the status and gets an email and an in-app message at every change.
 6. **Host is active.** The Host's resources go live and payouts are enabled.
 7. **Host type 1: create the resource and list it.** The Host owns the resource, lists it in our application and controls and maintains it. Drafts can be created before activation but stay inactive. [Resource and listing steps to be confirmed]
-8. **Host type 2: list the rental space.** The Host lists the space where our resource will be assembled and is paid for the space. The Host has no control over the resource; we have full control. [Space listing steps to be confirmed]
+8. **Host type 2: list the rental space.** The Host lists the space where our resource will be assembled; the Host has no control over the resource, and InstaAd has full control. Under the standard accepted agreement, we pay fixed monthly rent regardless of screen booking utilization, receive all advertising booking revenue, and provide no free Host slot. The parties may instead agree to no rent in exchange for one or more Host content slots, or negotiate another explicit slot allocation. Record the chosen terms and reserved inventory in the accepted request/agreement. [Space listing steps to be confirmed]
 
 **Sample UI workflow: Host type**
 
@@ -483,7 +483,7 @@ Organisations | Host / Customer applies to the whole organisation, which always 
 1. Can the Host type be changed later, and by whom in an organisation?
 2. What does a Host see on the Host page before the Host type is chosen?
 3. How and when does a Host type 1 get paid?
-4. How and when is a Host type 2 paid for the rental space (amount, frequency)?
+4. What process, terms and approval determine whether a Host type 2 receives fixed monthly rent, agreed Host slot(s) instead of rent, or an explicitly negotiated hybrid?
 5. Who assembles, installs and maintains our resource in the rental space, and with which SLA?
 6. Which countries and tax ID types are supported at launch?
 7. Is identity verification automated (provider) or manual review only?

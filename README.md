@@ -13,6 +13,7 @@ This repository mirrors the public engineering wiki pages from the GitHub wiki.
 
 ## Application features
 
+- [First Host Client Readiness](./Feature%20Documentation/First-Host-Client-Readiness.md)
 - [Advertiser Campaigns and Media](./Feature%20Documentation/Advertiser-Campaigns-and-Media.md)
 - [Host Screen Management](./Feature%20Documentation/Host-Screen-Management.md)
 - [Host Rental Location Listings](./Feature%20Documentation/Host-Rental-Location-Listings.md)

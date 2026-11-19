@@ -9,6 +9,7 @@
 
 ## Application features
 
+- [First Host Client Readiness](./First-Host-Client-Readiness.md)
 - [Advertiser Campaigns and Media](./Advertiser-Campaigns-and-Media.md)
 - [Host Screen Management](./Host-Screen-Management.md)
 - [Host Rental Location Listings](./Host-Rental-Location-Listings.md)

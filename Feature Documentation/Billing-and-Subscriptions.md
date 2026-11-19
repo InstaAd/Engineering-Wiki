@@ -12,7 +12,7 @@
 
 The Subscriptions page presents advertiser plans and screen-owner offers. The page copy describes campaign publishing plans and ways for screen owners to monetize display inventory. No plan was selected and no payment was made during review.
 
-The advertiser Basic subscription lets the Customer select up to **10 devices/screens in one selected Ort** (locality/municipality), with a monthly per-screen price based on city-area tier. The supplied Kleinostheim low-tier example is **€60 per screen/month**, or **€600/month for 10 screens**. Aschaffenburg mid-tier and Berlin/Frankfurt high-tier amounts remain to be set. This is a Customer entitlement, not a limit on the number of screens a Host may own, register or list. Premium and other higher-plan geographic coverage and pricing (including Bavaria-wide and Germany-wide targeting) still need definition. See [Resource Management and Monetization](./Resource-Management-and-Monetization.md) for the targeting examples and unresolved rate card.
+The advertiser Basic subscription lets the Customer select up to **10 devices/screens in one selected Ort** (locality/municipality), then choose how many available slots to book on each device (up to six). The monthly price is charged per booked slot and depends on city-area tier. The supplied Kleinostheim low-tier example is **€60 per slot/device/month**: all six slots cost **€360 per device/month**, or **€3,600/month for 10 devices**. Aschaffenburg mid-tier and Berlin/Frankfurt high-tier per-slot rates remain to be set. This is a Customer entitlement, not a limit on the number of screens a Host may own, register or list. Premium and other higher-plan geographic coverage and pricing (including Bavaria-wide and Germany-wide targeting) still need definition. See [Resource Management and Monetization](./Resource-Management-and-Monetization.md) for the targeting examples and rate-card details.
 
 The rollout proposal waives Customer application-use/subscription fees for the first release and first-100 Customer cohort, with expansion from the first pilot to 10 Customers after successful process validation. The precise waived fees, duration, eligibility and payment treatment still require approval. This does not make campaign bookings free unless separately approved.
 
@@ -40,8 +40,9 @@ flowchart TD
 | Advertiser Plans             Screen Owner Offers       Growth Ready|
 +------------------------------------------------------------------+
 | Advertiser Basic                                                 |
-| Up to 10 screens in one Ort · locality-tiered price/screen/month |
-| Kleinostheim low tier: €60/screen/month; €600 for 10 screens     |
+| Up to 10 screens in one Ort · choose slots per screen             |
+| Kleinostheim: €60/slot/screen/month; all 6 = €360/screen          |
+| All 6 slots on 10 screens = €3,600/month                          |
 | Premium reach: categories/regions/countrywide - terms TBD         |
 | 1 active campaign · 1 media asset · 1 play/hour                  |
 | Daily 09:00-17:00 · basic targeting/reporting   [Choose Plan]    |
@@ -56,7 +57,7 @@ This is a schematic summary of the documented business model, not a verified cur
 
 ## 3. Advertiser plan shown
 
-The advertiser Basic subscription is for campaign publishers and allows the Customer to select up to **10 screens in one selected Ort**. The per-screen monthly price is locality-tiered. The supplied low-tier Kleinostheim example is **€60 per screen/month**, so 10 screens cost **€600/month**. Aschaffenburg is a mid-tier example and Berlin/Frankfurt are high-tier examples, but their prices and the full locality mapping are TBD.
+The advertiser Basic subscription is for campaign publishers and allows the Customer to select up to **10 screens in one selected Ort**. On each device, the Customer may choose any number of available slots up to all six. The locality-tiered price is charged per slot per screen per month. The supplied low-tier Kleinostheim example is **€60 per slot/device/month**: all six slots on one device cost **€360/month**; all six slots on 10 devices cost **€3,600/month**. Booking fewer slots costs less. Aschaffenburg is a mid-tier example and Berlin/Frankfurt are high-tier examples, but their per-slot prices and the full locality mapping are TBD.
 
 Customers may want broader plan-based audience coverage, such as all businesses in Kleinostheim, bakeries in Aschaffenburg, shoe shops and gyms across Bavaria or Germany, or all Germany. Do not promise that these are available under Basic: map each geographic reach/category option to Basic, Pro, Premium or other plans and confirm their screen caps and prices. The plan card also displayed the following campaign features/limits:
 
@@ -99,7 +100,7 @@ The presence of plan cards does not establish that checkout, subscription entitl
 
 | Application feature | Existing related Jira reference | Scope note |
 |---|---|---|
-| Advertiser Basic: up to 10 devices in one Ort at locality-tiered monthly per-screen prices | [IA-263](https://insta-ad.atlassian.net/browse/IA-263), pricing decision [IA-272](https://insta-ad.atlassian.net/browse/IA-272), plan selection [IA-264](https://insta-ad.atlassian.net/browse/IA-264), and entitlement enforcement [IA-288](https://insta-ad.atlassian.net/browse/IA-288) | Kleinostheim low-tier example €60/device/month (€600/month for 10); Aschaffenburg mid-tier and Berlin/Frankfurt high-tier prices are TBD. This Customer limit is not a Host inventory cap. |
+| Advertiser Basic: up to 10 devices in one Ort; selectable available slots per device (up to 6) | [IA-263](https://insta-ad.atlassian.net/browse/IA-263), pricing decision [IA-272](https://insta-ad.atlassian.net/browse/IA-272), plan selection [IA-264](https://insta-ad.atlassian.net/browse/IA-264), and entitlement enforcement [IA-288](https://insta-ad.atlassian.net/browse/IA-288) | Charge locality-tiered price per slot/device/month. Kleinostheim example €60/slot: all 6 = €360/device/month and €3,600/month for 10 devices. Aschaffenburg mid-tier and Berlin/Frankfurt high-tier per-slot prices are TBD. This Customer limit is not a Host inventory cap. |
 | Basic-to-Premium geographic and category targeting | Campaigns/media [IA-517](https://insta-ad.atlassian.net/browse/IA-517), plan catalog [IA-263](https://insta-ad.atlassian.net/browse/IA-263), pricing decision [IA-272](https://insta-ad.atlassian.net/browse/IA-272), plan selection [IA-264](https://insta-ad.atlassian.net/browse/IA-264) | Map locality, business-category, Bavaria-wide and Germany-wide coverage to plan tiers and prices; don't promise coverage until entitlement rules are approved. |
 | Host type 1 fee route choice and trial pricing | Slot monetization [IA-520](https://insta-ad.atlassian.net/browse/IA-520), plan/pricing [IA-263](https://insta-ad.atlassian.net/browse/IA-263), decision [IA-272](https://insta-ad.atlassian.net/browse/IA-272), and payout [IA-250](https://insta-ad.atlassian.net/browse/IA-250) | Host chooses X% per successful booking or a fixed recurring application subscription with no booking fee; trial the first 100 eligible users before setting the subscription price. Never charge both routes together. |
 | Plans and subscription catalog | [IA-262](https://insta-ad.atlassian.net/browse/IA-262), [IA-263](https://insta-ad.atlassian.net/browse/IA-263), [IA-264](https://insta-ad.atlassian.net/browse/IA-264), [IA-268](https://insta-ad.atlassian.net/browse/IA-268) | Existing plan/catalog scope. Purchase and entitlement enforcement have not been independently verified. |

@@ -14,6 +14,12 @@ The application supports personal and business workspaces and an active-workspac
 
 The future organization, teams, access-rights, invitations, and Admin/Member requirements remain described in [User Home Page](./User-Home-Page.md) and the related existing Jira issues. This page records only the signed-in UI observed during review.
 
+### First organization Customer pilot
+
+The first organization Customer scenario is documented in [First Organization Customer Pilot Readiness](./First-Organization-Customer-Pilot-Readiness.md). The customer needs one organization Customer account for campaign activity across 3–5 sites in its buildings. Screen ownership remains separate: two pilot devices are InstaAd-owned and the remaining devices are owned by independent Hosts. The customer organization must not be treated as owner of Host/InstaAd inventory or given Host privileges solely because the devices are installed at customer sites.
+
+Before onboarding this client, verify organization creation/Admin assignment, active workspace selection, Member permissions, site authority and the cross-owner campaign access model. Existing workspace UI does not by itself confirm these controls or the multi-site campaign behavior.
+
 ## 2. Workspace workflow and sample UI
 
 ```mermaid
@@ -73,3 +79,4 @@ The app's header reflects the active workspace. Workspace creation, changing act
 - [Sign-up and Login](./Sign-up-and-Login.md)
 - [User Account Host Flow](./User-Account-Host-Flow.md)
 - [User Account Customer Flow](./User-Account-Customer-Flow.md)
+- [First Organization Customer Pilot Readiness](./First-Organization-Customer-Pilot-Readiness.md)

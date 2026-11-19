@@ -13,6 +13,7 @@ This repository mirrors the public engineering wiki pages from the GitHub wiki.
 
 ## Application features
 
+- [First Organization Customer Pilot Readiness](./Feature%20Documentation/First-Organization-Customer-Pilot-Readiness.md)
 - [First Host Client Readiness](./Feature%20Documentation/First-Host-Client-Readiness.md)
 - [Advertiser Campaigns and Media](./Feature%20Documentation/Advertiser-Campaigns-and-Media.md)
 - [Host Screen Management](./Feature%20Documentation/Host-Screen-Management.md)

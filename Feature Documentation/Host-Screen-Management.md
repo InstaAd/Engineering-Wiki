@@ -121,6 +121,12 @@ The page describes screen groups as collections for organizing screens and easie
 
 The application UI and public landing page refer to pairing and playback, including opening a player with a secure link. The pairing workflow, device activation, health monitoring, content playback, and earnings were not completed or verified during review. Keep the relevant future Host activation and inactive-inventory requirements in the [Host flow](./User-Account-Host-Flow.md).
 
+### Device ownership and campaign access
+
+A screen's installed building/site and its legal/operational owner are separate attributes. A Customer organization may run campaigns that use eligible Host-owned or InstaAd-owned screens without becoming the device owner. The first mixed-owner organization pilot is specified in [First Organization Customer Pilot Readiness](./First-Organization-Customer-Pilot-Readiness.md).
+
+For each registered screen, preserve an explicit owner, operating/maintenance responsibility, installation site, authorization to use that site, approval state, availability and campaign-facing status. A Customer should be able to select available inventory but must not be able to edit device configuration, Host details, or payout information unless separately authorized. These cross-owner permissions and campaign behavior remain to be tested.
+
 ## 8. Existing Jira mapping and gaps
 
 | Application feature | Existing related Jira reference | Scope note |
@@ -134,3 +140,4 @@ The application UI and public landing page refer to pairing and playback, includ
 - [User Account Host Flow](./User-Account-Host-Flow.md)
 - [Sign-up and Login](./Sign-up-and-Login.md)
 - [Advertiser Campaigns and Media](./Advertiser-Campaigns-and-Media.md)
+- [First Organization Customer Pilot Readiness](./First-Organization-Customer-Pilot-Readiness.md)

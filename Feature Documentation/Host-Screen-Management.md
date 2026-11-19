@@ -17,6 +17,8 @@ The application’s **My Screens** and **Register Screen** areas map to a Host m
 
 Under the proposed shared [Resource Management and Monetization](./Resource-Management-and-Monetization.md) model, each Host-owned screen has one 10-second no-charge Host content slot per playback loop. The Host may use it for their own content or release it to the paid booking pool. The Host receives agreed advertising booking revenue less InstaAd's agreed royalty/service charge. The exact promotion timing, loop allocation, rate, deductions and payout schedule are not verified in the current app and remain subject to product confirmation.
 
+The advertiser Basic plan's limit of up to five selected ad-placement screens at €50 per selected screen per month is a Customer subscription rule, not a limit on how many screens a Host may own, register or list. See [Billing and Subscriptions](./Billing-and-Subscriptions.md) and its related pricing/entitlement Jira mapping.
+
 ## 2. Access prerequisites
 
 The user first completes account-level mandatory details and account verification/activation under [Sign-up and Login](./Sign-up-and-Login.md), Jira [IA-4](https://insta-ad.atlassian.net/browse/IA-4). Host-specific details and verification are additional requirements under [IA-449](https://insta-ad.atlassian.net/browse/IA-449), including the activation checklist [IA-450](https://insta-ad.atlassian.net/browse/IA-450). The presence of signed-in screen-management UI does not waive these planned gates.

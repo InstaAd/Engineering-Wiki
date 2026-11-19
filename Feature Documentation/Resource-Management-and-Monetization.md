@@ -5,15 +5,15 @@
 | Audience | All Customers / advertisers, screen-owning Hosts, space-renting Hosts, and InstaAd operations |
 | Scope | Screen inventory, ad slots, customer subscriptions and targeting, Host booking revenue, and fixed space rent |
 | Related documentation | [Customer flow](./User-Account-Customer-Flow.md), [Host flow](./User-Account-Host-Flow.md), [Advertiser Campaigns and Media](./Advertiser-Campaigns-and-Media.md), [Host Screen Management](./Host-Screen-Management.md), [Host Rental Location Listings](./Host-Rental-Location-Listings.md), [Billing and Subscriptions](./Billing-and-Subscriptions.md), [Android Screen Player](./Android-Screen-Player.md) |
-| Related Jira | New screen slot inventory and Host monetization feature [IA-520](https://insta-ad.atlassian.net/browse/IA-520); Resource Management [IA-324](https://insta-ad.atlassian.net/browse/IA-324); Resource and Space Listing [IA-189](https://insta-ad.atlassian.net/browse/IA-189); Host type 1 listing [IA-190](https://insta-ad.atlassian.net/browse/IA-190); Host type 2 rental space [IA-194](https://insta-ad.atlassian.net/browse/IA-194); pricing model [IA-272](https://insta-ad.atlassian.net/browse/IA-272); Subscriptions and Plans [IA-262](https://insta-ad.atlassian.net/browse/IA-262), pricing [IA-263](https://insta-ad.atlassian.net/browse/IA-263), plan limits [IA-288](https://insta-ad.atlassian.net/browse/IA-288); payments [IA-213](https://insta-ad.atlassian.net/browse/IA-213); Host payouts [IA-250](https://insta-ad.atlassian.net/browse/IA-250), receive payouts [IA-251](https://insta-ad.atlassian.net/browse/IA-251), and rental-space payment [IA-255](https://insta-ad.atlassian.net/browse/IA-255); Android Screen Player [IA-521](https://insta-ad.atlassian.net/browse/IA-521) |
-| Status | Business model supplied for documentation; amounts and slot calculations below are proposals/examples until validated |
+| Related Jira | New screen slot inventory and Host monetization feature [IA-520](https://insta-ad.atlassian.net/browse/IA-520); Resource Management [IA-324](https://insta-ad.atlassian.net/browse/IA-324); Resource and Space Listing [IA-189](https://insta-ad.atlassian.net/browse/IA-189); Host type 1 listing [IA-190](https://insta-ad.atlassian.net/browse/IA-190); Host type 2 rental space [IA-194](https://insta-ad.atlassian.net/browse/IA-194); pricing model [IA-272](https://insta-ad.atlassian.net/browse/IA-272); Subscriptions and Plans [IA-262](https://insta-ad.atlassian.net/browse/IA-262), pricing [IA-263](https://insta-ad.atlassian.net/browse/IA-263), view plans [IA-264](https://insta-ad.atlassian.net/browse/IA-264), and plan limits [IA-288](https://insta-ad.atlassian.net/browse/IA-288); payments [IA-213](https://insta-ad.atlassian.net/browse/IA-213); Host payouts [IA-250](https://insta-ad.atlassian.net/browse/IA-250), receive payouts [IA-251](https://insta-ad.atlassian.net/browse/IA-251), and rental-space payment [IA-255](https://insta-ad.atlassian.net/browse/IA-255); Android Screen Player [IA-521](https://insta-ad.atlassian.net/browse/IA-521) |
+| Status | Advertiser Basic plan terms confirmed for documentation: up to five selected screens at €50 per screen per month; slot, payout, rent and other commercial details remain subject to their stated decisions |
 | Last updated | 2026-11-19 |
 
 ## 1. Purpose and core separation
 
 InstaAd primarily monetizes advertising campaigns that Customers create and publish on eligible screens. Resource management must keep four things separate:
 
-1. **The Customer subscription** controls who can create campaigns and the plan's geographic, device-count, or other usage limits.
+1. **The Customer subscription** controls who can create campaigns and the plan's screen-count or other usage limits. The Basic advertiser plan allows selection of up to five screens, charged at €50 per selected screen per month.
 2. **The screen/device** is owned and operated either by a screen-owning Host or by InstaAd. Its owner is not changed by where the screen is installed.
 3. **The ad slot** is a time position in the screen's playback loop. A screen-owning Host receives one no-charge slot per screen for their own content and may choose to release it for paid bookings instead.
 4. **The location agreement** applies when a Host provides space for an InstaAd-owned resource. InstaAd receives booking revenue from that resource and pays the Host the agreed fixed monthly rent, irrespective of how fully booked the screen is.
@@ -75,19 +75,19 @@ Customers pay a subscription to create and publish campaigns, subject to the sel
 
 Campaign discovery must match target criteria against truthful screen metadata (coordinates/municipality/region and verified business/location category). Customers should see which screens match and why, rather than a campaign silently expanding beyond the selected area or category.
 
-### Basic plan proposal
+### Advertiser Basic plan
 
-The proposed Basic subscription covers at most **10 devices in one selected Ort** (locality/municipality). Price per device per month is based on the locality's agreed city-area tier:
+The **advertiser Basic subscription** lets the Customer select up to **five screens** on which to display ads. The subscription price is **€50 per selected screen per month**:
 
-| Example locality/tier | Example monthly rate per device | Example Basic total for 10 devices |
-|---|---:|---:|
-| Kleinostheim — low tier | €60 | €600/month |
-| Aschaffenburg — mid tier | To be confirmed | To be confirmed |
-| Berlin or Frankfurt — high tier | To be confirmed | To be confirmed |
+| Selected screens | Monthly rate per screen | Monthly subscription total |
+|---:|---:|---:|
+| 1 | €50 | €50/month |
+| 2 | €50 | €100/month |
+| 3 | €50 | €150/month |
+| 4 | €50 | €200/month |
+| 5 (maximum) | €50 | €250/month |
 
-Ingolstadt was also given as a €70-per-day device earnings example; that is not the same as the proposed customer subscription rate. Do not infer a subscription tier amount from that daily figure.
-
-**Plan rule requiring confirmation:** the Basic example says a maximum of 10 devices in a selected Ort. Confirm whether a subscription is limited to one locality, whether a customer may buy several locality bundles, how cities/municipalities are assigned tiers, and what happens if a campaign selects fewer than 10 screens or temporarily loses inventory.
+This is a **Customer / advertiser plan limit**, not a screen-owner limit. It does not cap how many screens a Host may own, register or list. A Customer may target screens by geography and business category (for example, bakeries in Aschaffenburg or gyms across Bavaria); locality targeting does not change the stated €50 per selected screen price. The former 10-device / locality-tier price example is superseded and must not be used.
 
 ### Customer rollout and application-fee policy
 
@@ -141,7 +141,7 @@ The following figures were supplied as illustrative daily device earnings for a 
 | Ingolstadt | €70/day |
 | Berlin | €125/day |
 
-These are **examples, not guaranteed Host payouts or a validated rate card**. The booking volume, calculation period, gross-versus-net basis, owner share, InstaAd royalty, taxes, energy/connectivity/maintenance costs, and whether the figures represent a full day, full occupancy, or target earnings remain to be defined. Product and Finance must reconcile the daily examples with the proposed subscription price (e.g. €60 per device per month for a low-tier Basic plan); they are different revenue streams and must not be presented as the same charge.
+These are **examples, not guaranteed Host payouts or a validated earnings rate card**. The booking volume, calculation period, gross-versus-net basis, owner share, InstaAd royalty, taxes, energy/connectivity/maintenance costs, and whether the figures represent a full day, full occupancy, or target earnings remain to be defined. The Host daily earnings examples are separate from the advertiser's €50 per selected screen per month subscription charge and must not be presented as the same amount.
 
 For Host-owned screens, the expected calculation is:
 
@@ -201,7 +201,7 @@ The Host's rent is not reduced when campaign occupancy or bookings are low. Reco
 | Campaign targeting and bookings | Match geography and verified business categories to eligible screens; show the matching inventory, exclusions, price and booking outcome before confirmation. | Advertiser campaigns [IA-517](https://insta-ad.atlassian.net/browse/IA-517); resource discovery [IA-300](https://insta-ad.atlassian.net/browse/IA-300); booking [IA-312](https://insta-ad.atlassian.net/browse/IA-312) |
 | Host screen-owner earnings | Calculate statements from paid bookings, the approved InstaAd royalty/charge and documented adjustments. Provide payout status and auditable history; never treat an unused free slot as earned revenue. | Host payouts [IA-250](https://insta-ad.atlassian.net/browse/IA-250), receive payouts [IA-251](https://insta-ad.atlassian.net/browse/IA-251); new feature above |
 | Fixed rent for InstaAd-owned equipment | Record an accepted monthly rent agreement for Host-provided space and pay it independently of ad occupancy. Keep this separate from Host-owned screen booking payouts and the current advertiser-rentable listing flow. | Rental-space payments [IA-255](https://insta-ad.atlassian.net/browse/IA-255); Host type 2 resource tracking [IA-329](https://insta-ad.atlassian.net/browse/IA-329) |
-| Customer plan and first-100 rollout | Enforce the approved device/locality caps and disclose fees. Record pilot, first-10 and first-100 cohort eligibility; do not infer waived application fees mean free campaign inventory. | Pricing model [IA-272](https://insta-ad.atlassian.net/browse/IA-272); subscriptions [IA-262](https://insta-ad.atlassian.net/browse/IA-262); plans and pricing [IA-263](https://insta-ad.atlassian.net/browse/IA-263); plan limits [IA-288](https://insta-ad.atlassian.net/browse/IA-288) |
+| Customer plan and first-100 rollout | Enforce the advertiser Basic limit of five selected screens and charge €50 per selected screen per month; disclose totals before purchase. Record pilot, first-10 and first-100 cohort eligibility; do not infer waived application fees mean free campaign inventory. This is not a Host screen registration limit. | Pricing model [IA-272](https://insta-ad.atlassian.net/browse/IA-272); subscriptions [IA-262](https://insta-ad.atlassian.net/browse/IA-262); plans and pricing [IA-263](https://insta-ad.atlassian.net/browse/IA-263); plan limits [IA-288](https://insta-ad.atlassian.net/browse/IA-288) |
 | Android playback client | Pair a screen securely, fetch approved schedules and creative, play the assigned loop, report health and playback evidence, and recover from network interruption. Requirements are described separately and are not confirmed deployed behavior. | Android Screen Player Application [IA-521](https://insta-ad.atlassian.net/browse/IA-521), under workstream [IA-299](https://insta-ad.atlassian.net/browse/IA-299), linked to [IA-324](https://insta-ad.atlassian.net/browse/IA-324), [IA-518](https://insta-ad.atlassian.net/browse/IA-518) and [IA-517](https://insta-ad.atlassian.net/browse/IA-517) |
 
 The feature requirements and acceptance criteria are recorded in [IA-520](https://insta-ad.atlassian.net/browse/IA-520) and [IA-521](https://insta-ad.atlassian.net/browse/IA-521), with related existing issues linked in Jira. Existing Jira references identify related scope, not proof of implementation or completion.
@@ -211,13 +211,13 @@ The feature requirements and acceptance criteria are recorded in [IA-520](https:
 1. Does the 5–10 second InstaAd promotion fit inside a 10-second slot or extend the six-slot loop? Does it run on every screen and in every slot?
 2. Is the Host's free slot once per six-slot loop per Host-owned screen? Can the Host change the choice at any time, and what happens to already booked time?
 3. What creative length can a Customer book, and how are plays per hour, daily operating hours, gaps and proof of playback calculated?
-4. What is the approved per-device subscription price for low/mid/high locality tiers? Which localities belong to each tier, and does Basic allow only one locality?
+4. Which other campaign entitlements (active campaigns, creative limits, playback frequency and duration) are included in Basic alongside its confirmed five-screen maximum and €50 per selected screen per month?
 5. Are geography and business-category filters available as proposed, and who verifies category metadata?
 6. Is the Host screen-owner booking payout the full booking amount less a percentage, a fixed fee, or another royalty? Define taxes, refunds, cancellations, failed plays, payout timing and statements.
 7. Who pays electricity, connectivity, hardware, installation and maintenance costs for Host-owned screens versus InstaAd-owned screens?
 8. For Host-provided space, who approves the rent request, when does the monthly obligation begin/end, and what happens during outages, relocation or site closure?
 9. How does the current app's advertiser-rentable location listing align with the fixed-rent-for-InstaAd-resource Host type 2 model?
-10. Which values are contractual commitments, forecast estimates, or examples only? In particular, validate the €60/€70/€125 daily screen earnings examples against the €60/device/month Kleinostheim subscription example.
+10. Which Host earnings values are contractual commitments, forecast estimates, or examples only? In particular, keep the €60/€70/€125 daily screen earnings examples distinct from the advertiser Basic price of €50 per selected screen per month.
 11. What exact Customer fees are waived for the first pilot, first 10 Customers and first 100 Customers, for how long, and are campaign booking charges explicitly excluded?
 12. What measurable pilot-success criteria allow expansion to 10 Customers, and how are Customer cohort eligibility and counting administered?
 13. Which first-100 cohort metrics, observation period and profitability thresholds must Finance approve before introducing a Host-owner subscription?

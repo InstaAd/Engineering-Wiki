@@ -15,6 +15,8 @@ This repository mirrors the public engineering wiki pages from the GitHub wiki.
 
 - [First Organization Customer Pilot Readiness](./Feature%20Documentation/First-Organization-Customer-Pilot-Readiness.md)
 - [First Host Client Readiness](./Feature%20Documentation/First-Host-Client-Readiness.md)
+- [Resource Management and Monetization](./Feature%20Documentation/Resource-Management-and-Monetization.md)
+- [Android Screen Player](./Feature%20Documentation/Android-Screen-Player.md)
 - [Advertiser Campaigns and Media](./Feature%20Documentation/Advertiser-Campaigns-and-Media.md)
 - [Host Screen Management](./Feature%20Documentation/Host-Screen-Management.md)
 - [Host Rental Location Listings](./Feature%20Documentation/Host-Rental-Location-Listings.md)

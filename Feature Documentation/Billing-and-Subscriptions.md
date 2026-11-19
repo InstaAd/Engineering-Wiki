@@ -12,6 +12,10 @@
 
 The Subscriptions page presents advertiser plans and screen-owner offers. The page copy describes campaign publishing plans and ways for screen owners to monetize display inventory. No plan was selected and no payment was made during review.
 
+The proposed commercial model separates Customer subscription fees from campaign booking revenue, Host type 1 screen payouts and Host type 2 fixed space rent. Its locality-based Basic example is up to 10 devices in a selected Ort, with an illustrative €60 per device/month in low-tier Kleinostheim (€600/month for 10 devices). This model and the still-open price/slot decisions are documented in [Resource Management and Monetization](./Resource-Management-and-Monetization.md); it is not confirmed as the pricing currently enforced by the app.
+
+The rollout proposal waives Customer application-use/subscription fees for the first release and first-100 Customer cohort, with expansion from the first pilot to 10 Customers after successful process validation. The precise waived fees, duration, eligibility and payment treatment still require approval. This does not make campaign bookings free unless separately approved. Host-owner subscription pricing is deferred until first-100 cohort data can support a sustainable comparison against booking fees for both Hosts and InstaAd; see the cohort metrics in [Resource Management and Monetization](./Resource-Management-and-Monetization.md).
+
 ## 2. Subscription selection workflow
 
 The app shows plans and actions to choose/manage a plan. The purchase and entitlement flow was not tested.
@@ -43,7 +47,7 @@ flowchart TD
 +------------------------------------------------------------------+
 ```
 
-This is a schematic transcription of the displayed page. Pricing and purchase mechanics are not independently verified.
+This is a schematic transcription of the displayed page. The displayed €50/month Starter Campaign does not match the proposed €60/device/month Kleinostheim example; these are separate observed UI copy and proposed pricing, and Product must reconcile them before either is treated as authoritative. Purchase mechanics are not independently verified.
 
 ## 3. Advertiser plan shown
 
@@ -58,6 +62,8 @@ The page displayed a **Starter Campaign** plan at **€50/month**, described for
 - Basic campaign reporting
 
 These are details shown in the reviewed UI and are not independently verified commercial terms.
+
+They must not be conflated with the proposed locality-tier model in [Resource Management and Monetization](./Resource-Management-and-Monetization.md), which has a different unit (device/month) and remains subject to approval.
 
 ## 4. Screen-owner offers shown
 
@@ -74,6 +80,7 @@ No complete pricing or enrollment workflow for these offers was verified.
 - Advertiser plans relate to campaign and media use in [Advertiser Campaigns and Media](./Advertiser-Campaigns-and-Media.md).
 - Screen-owner offers relate to screen registration in [Host Screen Management](./Host-Screen-Management.md).
 - Host payout and tax requirements remain in the [Host flow](./User-Account-Host-Flow.md), including the planned Host verification gate.
+- The shared proposed subscription, slot, booking-revenue and fixed-rent model is in [Resource Management and Monetization](./Resource-Management-and-Monetization.md).
 
 The presence of plan cards does not establish that checkout, subscription entitlement enforcement, ad playback limits, earnings calculation, or payouts work end to end.
 

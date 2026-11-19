@@ -8,7 +8,7 @@ Parent feature | FEAT-002 Sign-up and Login ([IA-4](https://insta-ad.atlassian.n
 Jira feature | [IA-140](https://insta-ad.atlassian.net/browse/IA-140) Customer Pathway and Onboarding, in workstream [IA-139](https://insta-ad.atlassian.net/browse/IA-139) Customer Experience. Stories: [IA-141](https://insta-ad.atlassian.net/browse/IA-141) Land on the Customer page and fill in customer details, [IA-145](https://insta-ad.atlassian.net/browse/IA-145) Open the Host pathway from the Customer page. Task: [IA-149](https://insta-ad.atlassian.net/browse/IA-149) Define the customer-specific fields
 Related feature | FEAT-001 Sign-up and Account Onboarding
 User type | Customer (resource user / advertiser / campaign publisher)
-Other user type | [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Host-Flow)
+Other user type | [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/User-Account-Host-Flow)
 Status | Draft
 Last updated | 2026-11-16
 
@@ -23,7 +23,7 @@ The user first completes the account-level mandatory fields and verification/act
 ## 2. Who is a Customer
 
 * A Customer is a resource user (see section 3 of the parent page).
-* A Customer books the resources and pays for the usage of the resources.
+* A Customer books the resources and pays for the usage of the resources. The proposed subscription, locality/category targeting, device limits and slot model are described in [Resource Management and Monetization](./Resource-Management-and-Monetization.md); they are not yet verified end-to-end app behavior.
 * In the current application, this Customer role is presented as an advertiser/campaign publisher who discovers Host screens, selects a schedule and creative, and proceeds through quote and checkout.
 * Host / Customer applies to the whole organisation. An organisation always has an organisation admin, who is set when the organisation is created.
 * A Customer can also be a Host, and the other way round (see section 5).
@@ -57,7 +57,7 @@ flowchart TD
 
 1. The Customer clicks the button for the Host part of the application.
 2. The system asks for confirmation: "Yes, continue as Host".
-3. The Customer completes the steps for the Host pathway (see the [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Host-Flow)).
+3. The Customer completes the steps for the Host pathway (see the [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/User-Account-Host-Flow)).
 
 ## 6. Rules
 

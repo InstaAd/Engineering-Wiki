@@ -11,6 +11,8 @@
 
 - [First Organization Customer Pilot Readiness](./First-Organization-Customer-Pilot-Readiness.md)
 - [First Host Client Readiness](./First-Host-Client-Readiness.md)
+- [Resource Management and Monetization](./Resource-Management-and-Monetization.md)
+- [Android Screen Player](./Android-Screen-Player.md)
 - [Advertiser Campaigns and Media](./Advertiser-Campaigns-and-Media.md)
 - [Host Screen Management](./Host-Screen-Management.md)
 - [Host Rental Location Listings](./Host-Rental-Location-Listings.md)

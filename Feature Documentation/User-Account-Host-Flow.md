@@ -8,13 +8,13 @@ Parent feature | FEAT-002 Sign-up and Login ([IA-4](https://insta-ad.atlassian.n
 Jira feature | [IA-449](https://insta-ad.atlassian.net/browse/IA-449) Host Onboarding and Verification (mandatory Host details, verification, activation) and [IA-177](https://insta-ad.atlassian.net/browse/IA-177) Host Pathway and Host Types, both in workstream [IA-176](https://insta-ad.atlassian.net/browse/IA-176) Host Experience. See section 16 for all stories and tasks
 Related feature | FEAT-001 Sign-up and Account Onboarding
 User type | Host: Host type 1 (screen owner) and Host type 2 (current app rental-location listing; future scope still requires confirmation)
-Other user type | [Customer flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Customer-Flow)
+Other user type | [Customer flow](https://github.com/InstaAd/Engineering-Wiki/wiki/User-Account-Customer-Flow)
 Status | Draft
 Last updated | 2026-11-16
 
 ## 1. Summary
 
-There are two main types of users, and each has its own page: the Customer and the Host. This page is for the Host. A Host is a resource owner who **earns money through our platform**. A Host is either **Host type 1**, who owns a resource, lists it in our application and controls it, or **Host type 2**, who provides rental space to assemble our resource and is paid for the space. A Host can be both types.
+There are two main types of users, and each has its own page: the Customer and the Host. This page is for the Host. A Host is either **Host type 1**, who owns a resource, lists it in our application and controls it, or **Host type 2**, who provides rental space to assemble an InstaAd-owned resource and is paid fixed monthly rent under the accepted agreement. A Host can be both types. The shared [Resource Management and Monetization](./Resource-Management-and-Monetization.md) model explains how Host-owned screen bookings differ from rent for an InstaAd-owned resource.
 
 Because the Host earns money, the Host must give a set of **mandatory details** and pass **verification** before the Host role is active (section 4). **Until the Host is verified and active, all of the Host's resources stay inactive**: hidden from Customers and not bookable. This is the same activation idea as for the account itself.
 
@@ -28,8 +28,8 @@ The user first completes the account-level mandatory fields and account verifica
 
 Host type | What the Host does | Control and maintenance of the resource | Gets paid for
 -- | -- | -- | --
-Type 1 | Owns the resource and lists it in our application | The Host controls and maintains the resource | [to be confirmed]
-Type 2 | Provides rental space to assemble our resource | None. We have full control of the resource and maintain it [to be confirmed] | The rental space [to be confirmed]
+Type 1 | Owns the resource and lists it in our application | The Host controls and maintains the resource | Paid advertising bookings on the screen, less InstaAd's agreed royalty/service charge; amount and settlement details are open
+Type 2 | Provides rental space to assemble our resource | InstaAd owns and controls the resource; Host's maintenance responsibilities remain subject to agreement | Fixed monthly rent in the accepted agreement, independent of screen booking utilization
 
 * A Host is a resource owner (see section 3 of the parent page).
 * A Host can be Host type 1, Host type 2, or both.
@@ -456,7 +456,7 @@ Notifications (email and in-app) are sent on: submitted, information requested, 
 
 1. The Host clicks the button for the Customer part of the application.
 2. The system asks for confirmation: "Yes, continue as Customer".
-3. The Host completes the steps for the Customer pathway (see the [Customer flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Customer-Flow)).
+3. The Host completes the steps for the Customer pathway (see the [Customer flow](https://github.com/InstaAd/Engineering-Wiki/wiki/User-Account-Customer-Flow)).
 
 ## 13. Rules
 
@@ -494,6 +494,7 @@ Organisations | Host / Customer applies to the whole organisation, which always 
 12. Which triggers and deadlines apply to re-verification (section 11)?
 13. Does a tenant need separate landlord consent to install a screen and/or offer the shop as a rental location to advertisers, beyond permissions in the lease?
 14. How should the future Host type 2 requirement (rental space for an InstaAd resource) align with the app's current Rent Location listing for advertisers?
+15. What booking royalty, payout schedule, playback accounting and dispute/adjustment rules apply to Host type 1 screen earnings? See the shared [Resource Management and Monetization](./Resource-Management-and-Monetization.md) model.
 
 ## 15. Change log
 

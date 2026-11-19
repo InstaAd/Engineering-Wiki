@@ -11,7 +11,7 @@ Owner (Product) | [Name]
 Tech lead | [Name]
 Status | Draft
 Related features | FEAT-002 Sign-up and Login ([IA-4](https://insta-ad.atlassian.net/browse/IA-4)), FEAT-001 Sign-up and Account Onboarding, [IA-108](https://insta-ad.atlassian.net/browse/IA-108) Organisations, Teams and Workspaces
-Related pages | [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Host-Flow), [Customer flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Customer-Flow)
+Related pages | [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/User-Account-Host-Flow), [Customer flow](https://github.com/InstaAd/Engineering-Wiki/wiki/User-Account-Customer-Flow)
 Last updated | 2026-11-16
 
 ## 1. Summary
@@ -45,7 +45,7 @@ Personal user | An individual using the product on their own. The user has one r
 Organisation Admin | Manages the organisation: teams, access rights, the account type and the workspaces. An organisation can have more than one admin.
 Organisation Member | Uses the workspaces the admin has given the Member access to.
 
-The Host and the Customer are the two main user types. See the [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Host-Flow) and the [Customer flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Customer-Flow).
+The Host and the Customer are the two main user types. See the [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/User-Account-Host-Flow) and the [Customer flow](https://github.com/InstaAd/Engineering-Wiki/wiki/User-Account-Customer-Flow).
 
 ## 3. Flow
 

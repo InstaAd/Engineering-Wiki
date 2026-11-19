@@ -66,7 +66,7 @@ Invited user | Received an invitation to an organisation   and signs up or logs 
 
 **Role selection:** the role names are **Host** (resource owner) and **Customer** (resource user). The role is the type of user, so it is separate from the account type (Personal or Organisation) in FEAT-001. Role is not a mandatory sign-up field. The user picks a role later by landing on the Host or Customer page and filling in the relevant details there (see section 6.1).
 
-**Role flows:** there are two main user types, and each has its own page: the [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Host-Flow) (Host type 1 and Host type 2) and the [Customer flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Customer-Flow). They describe what each user type does after the account is active.
+**Role flows:** there are two main user types, and each has its own page: the [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/User-Account-Host-Flow) (Host type 1 and Host type 2) and the [Customer flow](https://github.com/InstaAd/Engineering-Wiki/wiki/User-Account-Customer-Flow). They describe what each user type does after the account is active.
 
 **Home page:** the [User Home Page](https://github.com/InstaAd/Engineering-Wiki/wiki/Feature-%E2%80%90-User-Home-Page) describes what each user sees after the account is approved: the Personal home page, and the Organisation home page for an Admin or a Member.
 
@@ -668,6 +668,6 @@ Jira | Feature | Wiki page
 -- | -- | --
 [IA-85](https://insta-ad.atlassian.net/browse/IA-85) | User Home Page | [Feature - User Home Page](https://github.com/InstaAd/Engineering-Wiki/wiki/Feature-%E2%80%90-User-Home-Page)
 [IA-108](https://insta-ad.atlassian.net/browse/IA-108) | Organisations, Teams and Workspaces | [Feature - User Home Page](https://github.com/InstaAd/Engineering-Wiki/wiki/Feature-%E2%80%90-User-Home-Page) (sections 5 and 6)
-[IA-140](https://insta-ad.atlassian.net/browse/IA-140) | Customer Pathway and Onboarding | [Customer flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Customer-Flow)
-[IA-177](https://insta-ad.atlassian.net/browse/IA-177) | Host Pathway and Host Types | [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Host-Flow)
-[IA-449](https://insta-ad.atlassian.net/browse/IA-449) | Host Onboarding and Verification (mandatory Host details, verification, activation) | [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/Sign-up-and-Login-Host-Flow) (sections 4 to 11)
+[IA-140](https://insta-ad.atlassian.net/browse/IA-140) | Customer Pathway and Onboarding | [Customer flow](https://github.com/InstaAd/Engineering-Wiki/wiki/User-Account-Customer-Flow)
+[IA-177](https://insta-ad.atlassian.net/browse/IA-177) | Host Pathway and Host Types | [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/User-Account-Host-Flow)
+[IA-449](https://insta-ad.atlassian.net/browse/IA-449) | Host Onboarding and Verification (mandatory Host details, verification, activation) | [Host flow](https://github.com/InstaAd/Engineering-Wiki/wiki/User-Account-Host-Flow) (sections 4 to 11)

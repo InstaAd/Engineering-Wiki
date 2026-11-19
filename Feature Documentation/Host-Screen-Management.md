@@ -4,13 +4,18 @@
 |---|---|
 | User role | Host / screen owner — Host type 1 mapping |
 | Parent wiki feature | [Host flow](./User-Account-Host-Flow.md) |
-| Related Jira | Screen registration, groups, and pairing [IA-518](https://insta-ad.atlassian.net/browse/IA-518); Resource and Space Listing [IA-189](https://insta-ad.atlassian.net/browse/IA-189), Host type 1 resource listing [IA-190](https://insta-ad.atlassian.net/browse/IA-190), Resource Management [IA-324](https://insta-ad.atlassian.net/browse/IA-324); Host Pathway and Host Types [IA-177](https://insta-ad.atlassian.net/browse/IA-177), choose Host type [IA-178](https://insta-ad.atlassian.net/browse/IA-178), Host details [IA-182](https://insta-ad.atlassian.net/browse/IA-182), Host Onboarding and Verification [IA-449](https://insta-ad.atlassian.net/browse/IA-449), ownership details [IA-458](https://insta-ad.atlassian.net/browse/IA-458), inactive inventory [IA-478](https://insta-ad.atlassian.net/browse/IA-478) |
+| Related documentation | [Resource Management and Monetization](./Resource-Management-and-Monetization.md), [Android Screen Player](./Android-Screen-Player.md) |
+| Related Jira | Screen registration, groups, and pairing [IA-518](https://insta-ad.atlassian.net/browse/IA-518); Android Screen Player [IA-521](https://insta-ad.atlassian.net/browse/IA-521); Screen Slot Inventory and Host Monetization [IA-520](https://insta-ad.atlassian.net/browse/IA-520); Resource and Space Listing [IA-189](https://insta-ad.atlassian.net/browse/IA-189), Host type 1 resource listing [IA-190](https://insta-ad.atlassian.net/browse/IA-190), Resource Management [IA-324](https://insta-ad.atlassian.net/browse/IA-324); Host Pathway and Host Types [IA-177](https://insta-ad.atlassian.net/browse/IA-177), choose Host type [IA-178](https://insta-ad.atlassian.net/browse/IA-178), Host details [IA-182](https://insta-ad.atlassian.net/browse/IA-182), Host Onboarding and Verification [IA-449](https://insta-ad.atlassian.net/browse/IA-449), ownership details [IA-458](https://insta-ad.atlassian.net/browse/IA-458), inactive inventory [IA-478](https://insta-ad.atlassian.net/browse/IA-478) |
 | Application review | 2026-11-16 |
 | Status | Current application UI documented; end-to-end actions not verified |
 
 ## 1. Purpose and role mapping
 
 The application’s **My Screens** and **Register Screen** areas map to a Host managing advertising screens (Host type 1). The [Host flow](./User-Account-Host-Flow.md) remains authoritative for planned Host mandatory details, verification, activation, and the requirement that Host inventory remains inactive until approval.
+
+### Host slot and booking economics
+
+Under the proposed shared [Resource Management and Monetization](./Resource-Management-and-Monetization.md) model, each Host-owned screen has one 10-second no-charge Host content slot per playback loop. The Host may use it for their own content or release it to the paid booking pool. The Host receives agreed advertising booking revenue less InstaAd's agreed royalty/service charge. The exact promotion timing, loop allocation, rate, deductions and payout schedule are not verified in the current app and remain subject to product confirmation.
 
 ## 2. Access prerequisites
 

@@ -14,6 +14,8 @@ The app's **Rent Location** area lets a Host create and manage a rental-location
 
 **Important distinction:** the existing future Host type 2 definition in the [Host flow](./User-Account-Host-Flow.md) describes providing rental space where an InstaAd resource is assembled and controlled by InstaAd. The current app's listing form describes a location for advertisers to rent. Preserve both meanings in the documentation until the product owner confirms whether the future Host type 2 definition should be broadened or whether these are separate listing concepts.
 
+For the future Host type 2 space-for-InstaAd-resource model, the proposed compensation is fixed monthly rent under the accepted agreement, paid regardless of screen booking utilization; advertising booking income for the InstaAd-owned device goes to InstaAd. This is separate from advertiser booking income on a Host-owned screen. See [Resource Management and Monetization](./Resource-Management-and-Monetization.md). The current app's listing UI does not establish that either payment flow is implemented.
+
 ## 2. Access prerequisites
 
 The user first completes account-level mandatory details and account verification/activation under [Sign-up and Login](./Sign-up-and-Login.md), Jira [IA-4](https://insta-ad.atlassian.net/browse/IA-4). The planned Host-specific details and verification under [IA-449](https://insta-ad.atlassian.net/browse/IA-449) remain additional requirements. Do not interpret the availability of the signed-in listing form as proof those requirements are waived or that all listing actions are enabled.

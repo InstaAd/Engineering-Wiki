@@ -12,6 +12,8 @@
 
 The Customer is the advertiser and campaign publisher. The application exposes campaign discovery and creation, media upload, and an advertisement library. This page documents the observed application UI as a current-state reference. Future Customer booking, payment, moderation, analytics, and publishing requirements in the [Customer flow](./User-Account-Customer-Flow.md) remain in scope and are not replaced by this snapshot.
 
+The proposed subscription, geography and business-category targeting model (including examples such as all Kleinostheim, bakeries in Aschaffenburg, or shoe shops and gyms across Bavaria/Germany) is documented separately in [Resource Management and Monetization](./Resource-Management-and-Monetization.md). The live discovery UI and campaign flow have not been verified to support all of those targeting combinations.
+
 ## 2. Access prerequisites
 
 The user must first complete account-level mandatory details and account verification/activation under [Sign-up and Login](./Sign-up-and-Login.md), Jira feature [IA-4](https://insta-ad.atlassian.net/browse/IA-4). The signed-in app displayed these features in an activated account. This review did not verify role-specific approval gates or access behavior for inactive accounts.

@@ -19,7 +19,7 @@ Under the proposed shared [Resource Management and Monetization](./Resource-Mana
 
 The Host chooses one of two monetization routes: a booking-fee route where InstaAd receives an agreed X% from each successful slot booking, or an application-subscription route where the Host pays a recurring fee regardless of bookings and is not charged an InstaAd booking fee. The application subscription amount is not yet set; it will be determined after a trial with the first 100 eligible users. The routes must not be charged together. Percentage, subscription pricing, slot/promotion timing, adjustments and payout schedules are not verified in the current app.
 
-The advertiser Basic plan's limit of up to five selected ad-placement screens at €50 per selected screen per month is a Customer subscription rule, not a limit on how many screens a Host may own, register or list. See [Billing and Subscriptions](./Billing-and-Subscriptions.md) and its related pricing/entitlement Jira mapping.
+The advertiser Basic plan's limit of up to 10 selected screens in one Ort with locality-tiered per-screen monthly pricing is a Customer subscription rule, not a limit on how many screens a Host may own, register or list. The Kleinostheim low-tier example is €60 per screen/month (€600/month for 10 screens). See [Billing and Subscriptions](./Billing-and-Subscriptions.md) and its related pricing/entitlement Jira mapping.
 
 ## 2. Access prerequisites
 

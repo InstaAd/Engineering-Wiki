@@ -15,7 +15,9 @@ The application’s **My Screens** and **Register Screen** areas map to a Host m
 
 ### Host slot and booking economics
 
-Under the proposed shared [Resource Management and Monetization](./Resource-Management-and-Monetization.md) model, each Host-owned screen has one 10-second no-charge Host content slot per playback loop. The Host may use it for their own content or release it to the paid booking pool. The Host receives agreed advertising booking revenue less InstaAd's agreed royalty/service charge. The exact promotion timing, loop allocation, rate, deductions and payout schedule are not verified in the current app and remain subject to product confirmation.
+Under the proposed shared [Resource Management and Monetization](./Resource-Management-and-Monetization.md) model, each Host-owned screen has one 10-second no-charge Host content slot per playback loop. The Host may use it for their own content or release it to the paid booking pool.
+
+The Host chooses one of two monetization routes: a booking-fee route where InstaAd receives an agreed X% from each successful slot booking, or an application-subscription route where the Host pays a recurring fee regardless of bookings and is not charged an InstaAd booking fee. The application subscription amount is not yet set; it will be determined after a trial with the first 100 eligible users. The routes must not be charged together. Percentage, subscription pricing, slot/promotion timing, adjustments and payout schedules are not verified in the current app.
 
 The advertiser Basic plan's limit of up to five selected ad-placement screens at €50 per selected screen per month is a Customer subscription rule, not a limit on how many screens a Host may own, register or list. See [Billing and Subscriptions](./Billing-and-Subscriptions.md) and its related pricing/entitlement Jira mapping.
 

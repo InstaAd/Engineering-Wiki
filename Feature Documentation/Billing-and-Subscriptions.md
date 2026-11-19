@@ -14,7 +14,9 @@ The Subscriptions page presents advertiser plans and screen-owner offers. The pa
 
 The confirmed advertiser Basic subscription lets the Customer select up to **five screens** for ad display at **€50 per selected screen per month** (maximum €250/month when all five are selected). This is an advertiser entitlement; it is not a limit on the number of screens a Host may own, register or list. Subscription fees remain separate from campaign booking revenue, Host type 1 screen payouts and Host type 2 fixed space rent. See [Resource Management and Monetization](./Resource-Management-and-Monetization.md) for the shared commercial rules.
 
-The rollout proposal waives Customer application-use/subscription fees for the first release and first-100 Customer cohort, with expansion from the first pilot to 10 Customers after successful process validation. The precise waived fees, duration, eligibility and payment treatment still require approval. This does not make campaign bookings free unless separately approved. Host-owner subscription pricing is deferred until first-100 cohort data can support a sustainable comparison against booking fees for both Hosts and InstaAd; see the cohort metrics in [Resource Management and Monetization](./Resource-Management-and-Monetization.md).
+The rollout proposal waives Customer application-use/subscription fees for the first release and first-100 Customer cohort, with expansion from the first pilot to 10 Customers after successful process validation. The precise waived fees, duration, eligibility and payment treatment still require approval. This does not make campaign bookings free unless separately approved.
+
+Host type 1 has a separate, not-yet-priced monetization choice: (1) a booking-fee route where InstaAd receives an agreed X% of each successful slot booking, or (2) a recurring application-use subscription paid regardless of booking volume, with no InstaAd booking fee. The Host chooses one route; the charges are not combined. The Host subscription fee is not curated yet and will be set after a trial with the first 100 eligible users. This Host pricing trial is distinct from the first-100 Customer application-fee waiver. See [Resource Management and Monetization](./Resource-Management-and-Monetization.md) for fee separation, cohort data and open decisions.
 
 ## 2. Subscription selection workflow
 
@@ -25,9 +27,9 @@ flowchart TD
     A[Activated account] --> B[Open Subscriptions]
     B --> C{Choose audience}
     C -->|Advertiser| D[Review campaign plan]
-    C -->|Screen owner| E[Review screen-owner offer]
+    C -->|Screen owner| E[Choose booking-fee route or application subscription]
     D --> F[Choose Plan]
-    E --> G[Enroll / contact / next action to verify]
+    E --> G[View chosen Host fee route and applicable terms]
     F -. checkout and entitlement flow to verify .-> H[Plan active]
     G -. enrollment and payout flow to verify .-> H
 ```
@@ -42,8 +44,9 @@ flowchart TD
 | 1 active campaign · 1 media asset · 1 play/hour                  |
 | Daily 09:00-17:00 · basic targeting/reporting   [Choose Plan]    |
 +------------------------------------------------------------------+
-| Screen-owner offers (separate from advertiser screen selection)  |
-| Pro: priority/earnings | Network Partner                         |
+| Host type 1 fee routes (separate from advertiser plan)            |
+| Booking fee: X% per successful booking OR application subscription|
+| Subscription price TBD after first-100-user trial; not both fees  |
 +------------------------------------------------------------------+
 ```
 
@@ -65,12 +68,19 @@ The screen count and per-screen price are the clarified advertiser Basic terms. 
 
 ## 4. Screen-owner offers shown
 
-Screen-owner offers are separate from the advertiser's Basic subscription. The previous documentation incorrectly attributed the five-screen Basic limit to a screen owner. It applies to the advertiser's selected ad-placement screens and does **not** establish a Host screen registration or ownership limit. Screen-owner plan limits and prices are not confirmed here. The page also displayed:
+Screen-owner monetization is separate from the advertiser's Basic subscription. The previous documentation incorrectly attributed the five-screen Basic limit to a screen owner. It applies to the advertiser's selected ad-placement screens and does **not** establish a Host screen registration or ownership limit.
+
+For Host type 1, the product model has two alternative fee routes:
+
+- **Booking-fee route:** InstaAd receives X% of each successful slot booking. The Host does not also pay an application subscription on this route. The percentage is TBD.
+- **Application-subscription route:** the Host pays a recurring application-use fee regardless of whether bookings occur. InstaAd does not charge a booking fee on this route. The subscription price is TBD until the first-100-user trial is evaluated.
+
+The Host chooses one route, and the app must disclose which route is active. Do not present the Host application subscription as a booking fee or combine it with the booking percentage. The page also displayed these separate offer descriptions:
 
 - **Screen Owner Pro:** priority campaign allocations, earnings dashboard, and payout insights
 - **Network Partner:** intended for malls, co-working hubs, and transport networks with high-traffic screens
 
-No complete pricing or enrollment workflow for these offers was verified.
+No complete pricing or enrollment workflow for the Pro and Network Partner offers was verified.
 
 ## 5. Relationship to other app workflows
 
@@ -86,6 +96,7 @@ The presence of plan cards does not establish that checkout, subscription entitl
 | Application feature | Existing related Jira reference | Scope note |
 |---|---|---|
 | Advertiser Basic: select up to five ad screens at €50 per selected screen/month | [IA-263](https://insta-ad.atlassian.net/browse/IA-263), pricing decision [IA-272](https://insta-ad.atlassian.net/browse/IA-272), plan selection [IA-264](https://insta-ad.atlassian.net/browse/IA-264), and entitlement enforcement [IA-288](https://insta-ad.atlassian.net/browse/IA-288) | Five-screen limit applies to the Customer's ad-placement selection; it is not a Host inventory cap. Show selected-screen count and monthly total before checkout. |
+| Host type 1 fee route choice and trial pricing | Slot monetization [IA-520](https://insta-ad.atlassian.net/browse/IA-520), plan/pricing [IA-263](https://insta-ad.atlassian.net/browse/IA-263), decision [IA-272](https://insta-ad.atlassian.net/browse/IA-272), and payout [IA-250](https://insta-ad.atlassian.net/browse/IA-250) | Host chooses X% per successful booking or a fixed recurring application subscription with no booking fee; trial the first 100 eligible users before setting the subscription price. Never charge both routes together. |
 | Plans and subscription catalog | [IA-262](https://insta-ad.atlassian.net/browse/IA-262), [IA-263](https://insta-ad.atlassian.net/browse/IA-263), [IA-264](https://insta-ad.atlassian.net/browse/IA-264), [IA-268](https://insta-ad.atlassian.net/browse/IA-268) | Existing plan/catalog scope. Purchase and entitlement enforcement have not been independently verified. |
 | Subscribe, lifecycle, entitlement and recurring billing | [IA-275](https://insta-ad.atlassian.net/browse/IA-275), [IA-276](https://insta-ad.atlassian.net/browse/IA-276), [IA-287](https://insta-ad.atlassian.net/browse/IA-287), [IA-292](https://insta-ad.atlassian.net/browse/IA-292) | Existing implementation scope. No purchase, renewal, cancellation, entitlement, or invoice workflow was tested in the app. |
 | Checkout and payment methods | [IA-213](https://insta-ad.atlassian.net/browse/IA-213), [IA-215](https://insta-ad.atlassian.net/browse/IA-215), [IA-226](https://insta-ad.atlassian.net/browse/IA-226) | Related existing payment and checkout issues; the visible Settings controls do not establish that these flows work end to end. |

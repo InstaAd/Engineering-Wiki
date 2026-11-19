@@ -28,7 +28,7 @@ The user first completes the account-level mandatory fields and account verifica
 
 Host type | What the Host does | Control and maintenance of the resource | Gets paid for
 -- | -- | -- | --
-Type 1 | Owns the resource and lists it in our application | The Host controls and maintains the resource | Paid advertising bookings on the screen, less InstaAd's agreed royalty/service charge; amount and settlement details are open
+Type 1 | Owns the resource and lists it in our application | The Host controls and maintains the resource | Chooses either a booking-fee route (InstaAd receives X% per successful slot booking) or a recurring application subscription regardless of booking volume (no InstaAd booking fee). X% and the subscription price are TBD; trial the first 100 eligible users before setting the subscription price.
 Type 2 | Provides rental space to assemble our resource | InstaAd owns and controls the resource; Host's maintenance responsibilities remain subject to agreement | Fixed monthly rent in the accepted agreement, independent of screen booking utilization
 
 * A Host is a resource owner (see section 3 of the parent page).
@@ -494,7 +494,7 @@ Organisations | Host / Customer applies to the whole organisation, which always 
 12. Which triggers and deadlines apply to re-verification (section 11)?
 13. Does a tenant need separate landlord consent to install a screen and/or offer the shop as a rental location to advertisers, beyond permissions in the lease?
 14. How should the future Host type 2 requirement (rental space for an InstaAd resource) align with the app's current Rent Location listing for advertisers?
-15. What booking royalty, payout schedule, playback accounting and dispute/adjustment rules apply to Host type 1 screen earnings? See the shared [Resource Management and Monetization](./Resource-Management-and-Monetization.md) model.
+15. What X% booking fee, successful-booking definition, payout schedule, playback accounting and dispute/adjustment rules apply to the booking-fee route? What application-subscription price and billing period should be set after the first-100-user trial? See the shared [Resource Management and Monetization](./Resource-Management-and-Monetization.md) model.
 
 ## 15. Change log
 
